@@ -820,6 +820,54 @@ export function useRealtime(sessionId: string) {
 }
 ```
 
+## API Integration Design
+
+### OpenAI API統合仕様
+
+**基本設定:**
+- モデル: GPT-4o-mini
+- 最大再試行回数: 2回
+- タイムアウト: 30秒/リクエスト
+
+**APIレスポンス形式:**
+```typescript
+interface ApiResponse<T = any> {
+  success: boolean;
+  data?: T;
+  error?: {
+    code: string;
+    message: string;
+    details?: any;
+    statusCode?: number;
+  };
+}
+```
+
+**エンドポイント:**
+- `POST /api/openai/generate` - テキスト生成
+- `POST /api/openai/analyze` - データ分析
+
+### SERPER API統合仕様
+
+**基本設定:**
+- 検索結果上限: 10件/キーワード
+- 対応言語: 日本語・英語
+- キャッシュ: なし
+- 最大再試行回数: 2回
+
+**検索パラメータ:**
+```typescript
+interface SerperSearchParams {
+  query: string;
+  num?: number; // デフォルト10
+  lang?: 'ja' | 'en' | 'all'; // デフォルト'all'
+  location?: string;
+}
+```
+
+**エンドポイント:**
+- `POST /api/serper/search` - Web検索
+
 ## Error Handling
 
 ### エラー分類と対応策
@@ -906,15 +954,15 @@ export function ErrorDisplay({ error, onRetry }: ErrorDisplayProps) {
   const getErrorMessage = (error: ErrorDisplayProps['error']) => {
     switch (error.type) {
       case 'api':
-        return 'API接続エラーが発生しました。しばらく時間をおいて再試行してください。';
+        return `API接続エラー: ${error.details || 'APIサービスへの接続に失敗しました'}`;
       case 'data_quality':
-        return 'データ品質に問題があります。利用可能な部分的な結果のみ表示されます。';
+        return `データ品質エラー: ${error.details || 'データの整合性に問題があります'}`;
       case 'timeout':
-        return '処理時間が制限を超過しました。完了した部分のみ表示されます。';
+        return `タイムアウトエラー: ${error.details || '処理時間が制限を超過しました'}`;
       case 'system':
-        return 'システムエラーが発生しました。管理者にお問い合わせください。';
+        return `システムエラー: ${error.details || '内部エラーが発生しました'}`;
       default:
-        return '予期しないエラーが発生しました。';
+        return `エラー: ${error.message || '予期しないエラーが発生しました'}`;
     }
   };
 
