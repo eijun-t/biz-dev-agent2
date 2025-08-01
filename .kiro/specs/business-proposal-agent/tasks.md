@@ -1,33 +1,33 @@
 # Implementation Plan
 
-- [ ] 1. Next.jsプロジェクト構造とSupabase設定
+- [x] 1. Next.jsプロジェクト構造とSupabase設定
   - Next.jsプロジェクトの初期化（TypeScript設定含む）
   - 基本ディレクトリ構造の作成（app/, lib/, types/）
   - 依存関係管理（package.json, next.config.js）
   - _Requirements: 7.1, 7.2, 11.1_
   - _Note: Environment variables already configured in .env.local_
 
-- [ ] 2. Supabaseデータベーススキーマとクライアント設定
-  - [ ] 2.1 データベーススキーマの作成
+- [x] 2. Supabaseデータベーススキーマとクライアント設定
+  - [x] 2.1 データベーススキーマの作成
     - sessions, business_ideas, evaluation_results等のテーブル作成
     - 三菱地所固有データテーブル（mitsubishi_assets, network_companies）の作成
     - Row Level Security (RLS)ポリシーの設定
     - _Requirements: 1.5, 10.1, 10.2, 11.3_
 
-  - [ ] 2.2 TypeScript型定義とSupabaseクライアント
+  - [x] 2.2 TypeScript型定義とSupabaseクライアント
     - データベース型定義ファイルの作成（types/database.ts）
     - Supabaseクライアントの設定（lib/supabase.ts）
     - カスタムフック（useSupabase, useRealtime）の実装
     - _Requirements: 7.2, 7.3, 9.2_
 
-  - [ ] 2.3 認証システムの実装
+  - [x] 2.3 認証システムの実装
     - Supabase Authの設定
     - 認証コンポーネントの作成
     - セッション管理機能の実装
     - _Requirements: 11.1, 11.2_
 
-- [ ] 3. 外部API統合とエラーハンドリングの実装
-  - [ ] 3.1 OpenAI API統合（Next.js App Router API Routes）
+- [x] 3. 外部API統合とエラーハンドリングの実装
+  - [x] 3.1 OpenAI API統合（Next.js App Router API Routes）
     - app/api/openai/配下にAPIエンドポイント作成
     - OpenAI APIクライアントの実装（lib/openai-client.ts）
     - レート制限とエラーハンドリング機能（エラー隠蔽禁止）
@@ -35,7 +35,7 @@
     - API障害時の明確なエラーメッセージ表示
     - _Requirements: 8.1, エラーハンドリング要件_
 
-  - [ ] 3.2 SERPER API統合（Next.js App Router API Routes）
+  - [x] 3.2 SERPER API統合（Next.js App Router API Routes）
     - app/api/serper/配下にAPIエンドポイント作成
     - SERPER APIクライアントの実装（lib/serper-client.ts）
     - 検索結果の品質チェック機能
@@ -43,7 +43,7 @@
     - 検索失敗時の明確なエラー表示
     - _Requirements: 8.2, 5.1, エラーハンドリング要件_
 
-  - [ ] 3.3 統合エラーハンドリングシステム
+  - [x] 3.3 統合エラーハンドリングシステム
     - ErrorHandlerクラスの実装（lib/error-handler.ts）
     - BaseAgentクラスの実装（エラー隠蔽禁止の原則）
     - カスタムエラークラス（ApiError, DataQualityError, TimeoutError）の実装
