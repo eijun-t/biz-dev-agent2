@@ -30,31 +30,35 @@
   - [x] 3.1 OpenAI API統合（Next.js App Router API Routes）
     - app/api/openai/配下にAPIエンドポイント作成
     - OpenAI APIクライアントの実装（lib/openai-client.ts）
+    - GPT-4o-miniモデルの使用
     - レート制限とエラーハンドリング機能（エラー隠蔽禁止）
-    - 指数バックオフによる再試行メカニズム
-    - API障害時の明確なエラーメッセージ表示
+    - 指数バックオフによる再試行メカニズム（最大2回まで）
+    - API障害時の明確なエラーメッセージ表示（技術的詳細含む）
     - _Requirements: 8.1, エラーハンドリング要件_
 
   - [x] 3.2 SERPER API統合（Next.js App Router API Routes）
     - app/api/serper/配下にAPIエンドポイント作成
     - SERPER APIクライアントの実装（lib/serper-client.ts）
+    - 1キーワードあたり10件までの検索結果取得
+    - 日本語・英語両方の検索対応
     - 検索結果の品質チェック機能
-    - 代替検索手段への切り替え機能
-    - 検索失敗時の明確なエラー表示
+    - 再試行メカニズム（最大2回まで）
+    - 検索失敗時の明確なエラー表示（技術的詳細含む）
     - _Requirements: 8.2, 5.1, エラーハンドリング要件_
 
   - [x] 3.3 統合エラーハンドリングシステム
     - ErrorHandlerクラスの実装（lib/error-handler.ts）
     - BaseAgentクラスの実装（エラー隠蔽禁止の原則）
     - カスタムエラークラス（ApiError, DataQualityError, TimeoutError）の実装
-    - ErrorDisplayコンポーネントの実装（components/ErrorDisplay.tsx）
-    - エラー分類と明示的な表示機能
+    - ErrorDisplayコンポーネントの実装（app/components/ErrorDisplay.tsx）
+    - エラー分類と明示的な表示機能（技術的詳細含む）
     - Supabaseへのエラーログ保存機能
     - デフォルト値・モックデータによるエラー隠蔽の禁止
+    - 再試行上限：2回
     - _Requirements: 8.3, エラーハンドリング要件_
 
 - [ ] 4. 情報収集エージェントの実装（Next.js App Router API Routes + Supabase）
-  - [ ] 4.1 ユーザー入力処理機能
+  - [x] 4.1 ユーザー入力処理機能
     - app/api/agents/information-collection/route.tsの作成
     - lib/agents/information-collection-agent.tsの実装
     - ユーザー入力の解析と調査計画策定機能
