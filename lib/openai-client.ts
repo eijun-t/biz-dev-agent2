@@ -1,173 +1,150 @@
-import { ApiError, ErrorHandler } from './error-handler';
+// OpenAI APIクライアント
+import OpenAI from 'openai'
+import { ApiError } from './error-handler'
 
-interface OpenAIRequestOptions {
-  model?: string;
-  temperature?: number;
-  maxTokens?: number;
-  systemPrompt?: string;
-  responseFormat?: 'text' | 'json';
-}
+// OpenAIクライアントのシングルトンインスタンス
+let openaiClient: OpenAI | null = null
 
-interface OpenAIResponse {
-  content: string;
-  usage?: {
-    prompt_tokens: number;
-    completion_tokens: number;
-    total_tokens: number;
-  };
-}
-
-export class OpenAIClient {
-  private apiKey: string;
-  private baseUrl = 'https://api.openai.com/v1';
-  private defaultModel = 'gpt-4o-mini';
-
-  constructor() {
-    const apiKey = process.env.OPENAI_API_KEY;
+export function getOpenAIClient(): OpenAI {
+  if (!openaiClient) {
+    const apiKey = process.env.OPENAI_API_KEY
+    
     if (!apiKey) {
-      throw new Error('OPENAI_API_KEY is not set in environment variables');
+      throw new ApiError(
+        'OPENAI_API_KEY is not configured',
+        'MISSING_API_KEY',
+        500
+      )
     }
-    this.apiKey = apiKey;
+
+    openaiClient = new OpenAI({
+      apiKey,
+      // タイムアウト設定
+      timeout: 60000, // 60秒
+      maxRetries: 2
+    })
   }
 
-  /**
-   * テキスト生成
-   */
-  async generate(
-    prompt: string,
-    options: OpenAIRequestOptions = {}
-  ): Promise<OpenAIResponse> {
-    const {
-      model = this.defaultModel,
-      temperature = 0.7,
-      maxTokens = 2000,
-      systemPrompt,
-      responseFormat = 'text',
-    } = options;
+  return openaiClient
+}
 
-    const messages: any[] = [];
-    
-    if (systemPrompt) {
-      messages.push({ role: 'system', content: systemPrompt });
-    }
-    
-    messages.push({ role: 'user', content: prompt });
+// OpenAI API呼び出しのラッパー関数
+export async function callOpenAI(
+  messages: OpenAI.ChatCompletionMessageParam[],
+  options: {
+    model?: string
+    temperature?: number
+    maxTokens?: number
+    responseFormat?: { type: 'json_object' } | { type: 'text' }
+  } = {}
+): Promise<string> {
+  const {
+    model = 'gpt-4-turbo-preview',
+    temperature = 0.7,
+    maxTokens = 4000,
+    responseFormat
+  } = options
 
-    const requestBody: any = {
+  try {
+    const client = getOpenAIClient()
+    const completion = await client.chat.completions.create({
       model,
       messages,
       temperature,
       max_tokens: maxTokens,
-    };
+      response_format: responseFormat
+    })
 
-    // JSON形式のレスポンスを要求する場合
-    if (responseFormat === 'json') {
-      requestBody.response_format = { type: 'json_object' };
-      // JSONレスポンスを要求する場合は、プロンプトにもその旨を含める
-      const lastMessage = messages[messages.length - 1];
-      lastMessage.content += '\n\nPlease respond in valid JSON format.';
-    }
-
-    try {
-      const response = await ErrorHandler.withRetry(
-        async () => {
-          const res = await fetch(`${this.baseUrl}/chat/completions`, {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-              'Authorization': `Bearer ${this.apiKey}`,
-            },
-            body: JSON.stringify(requestBody),
-          });
-
-          if (!res.ok) {
-            const errorData = await res.json().catch(() => ({}));
-            throw new ApiError(
-              `OpenAI API error: ${res.statusText}`,
-              res.status,
-              errorData.error?.code || 'OPENAI_ERROR',
-              errorData
-            );
-          }
-
-          return res.json();
-        },
-        2, // 最大2回まで再試行
-        1000 // 初期遅延1秒
-      );
-
-      const content = response.choices[0]?.message?.content;
-      if (!content) {
-        throw new ApiError(
-          'No content in OpenAI response',
-          500,
-          'NO_CONTENT',
-          response
-        );
-      }
-
-      return {
-        content,
-        usage: response.usage,
-      };
-    } catch (error) {
-      if (error instanceof ApiError) {
-        throw error;
-      }
+    const content = completion.choices[0]?.message?.content
+    
+    if (!content) {
       throw new ApiError(
-        `OpenAI API request failed: ${(error as Error).message}`,
-        500,
-        'REQUEST_FAILED',
-        error
-      );
+        'No response content from OpenAI',
+        'EMPTY_RESPONSE',
+        500
+      )
     }
-  }
 
-  /**
-   * データ分析用の構造化された応答を生成
-   */
-  async analyze(
-    data: any,
-    analysisPrompt: string,
-    options: OpenAIRequestOptions = {}
-  ): Promise<any> {
-    const systemPrompt = options.systemPrompt || 
-      'You are a data analyst. Analyze the provided data and respond with structured insights in JSON format.';
-
-    const prompt = `
-Data to analyze:
-${JSON.stringify(data, null, 2)}
-
-Analysis request:
-${analysisPrompt}
-
-Provide a structured analysis in JSON format.`;
-
-    const response = await this.generate(prompt, {
-      ...options,
-      systemPrompt,
-      responseFormat: 'json',
-    });
-
-    try {
-      return JSON.parse(response.content);
-    } catch (error) {
+    return content
+  } catch (error) {
+    if (error instanceof OpenAI.APIError) {
       throw new ApiError(
-        'Failed to parse OpenAI JSON response',
-        500,
-        'JSON_PARSE_ERROR',
-        { content: response.content, error: (error as Error).message }
-      );
+        `OpenAI API error: ${error.message}`,
+        'OPENAI_API_ERROR',
+        error.status || 500,
+        {
+          type: error.type,
+          code: error.code
+        }
+      )
     }
+    
+    throw error
   }
+}
 
-  /**
-   * トークン数の推定（簡易版）
-   */
-  estimateTokens(text: string): number {
-    // 簡易的な推定: 4文字 ≈ 1トークン（英語）、2文字 ≈ 1トークン（日本語）
-    const japaneseChars = (text.match(/[\u3000-\u303f\u3040-\u309f\u30a0-\u30ff\uff00-\uff9f\u4e00-\u9faf\u3400-\u4dbf]/g) || []).length;
-    const otherChars = text.length - japaneseChars;
-    return Math.ceil(japaneseChars / 2 + otherChars / 4);
+// JSON形式でレスポンスを取得
+export async function callOpenAIForJSON<T = any>(
+  messages: OpenAI.ChatCompletionMessageParam[],
+  options: Omit<Parameters<typeof callOpenAI>[1], 'responseFormat'> = {}
+): Promise<T> {
+  const response = await callOpenAI(messages, {
+    ...options,
+    responseFormat: { type: 'json_object' }
+  })
+
+  try {
+    return JSON.parse(response) as T
+  } catch (error) {
+    throw new ApiError(
+      'Failed to parse OpenAI JSON response',
+      'JSON_PARSE_ERROR',
+      500,
+      { response }
+    )
+  }
+}
+
+// ストリーミングレスポンス用の関数
+export async function* streamOpenAI(
+  messages: OpenAI.ChatCompletionMessageParam[],
+  options: {
+    model?: string
+    temperature?: number
+    maxTokens?: number
+  } = {}
+): AsyncGenerator<string, void, unknown> {
+  const {
+    model = 'gpt-4-turbo-preview',
+    temperature = 0.7,
+    maxTokens = 4000
+  } = options
+
+  try {
+    const client = getOpenAIClient()
+    const stream = await client.chat.completions.create({
+      model,
+      messages,
+      temperature,
+      max_tokens: maxTokens,
+      stream: true
+    })
+
+    for await (const chunk of stream) {
+      const content = chunk.choices[0]?.delta?.content
+      if (content) {
+        yield content
+      }
+    }
+  } catch (error) {
+    if (error instanceof OpenAI.APIError) {
+      throw new ApiError(
+        `OpenAI streaming error: ${error.message}`,
+        'OPENAI_STREAM_ERROR',
+        error.status || 500
+      )
+    }
+    
+    throw error
   }
 }

@@ -1,237 +1,187 @@
-import { supabase } from '@/lib/supabase';
+// エラーハンドリングシステム
+// エラー隠蔽を禁止し、明確なエラー表示を実現
+
+import { createClient } from '@/lib/supabase'
 
 // カスタムエラークラス
 export class ApiError extends Error {
   constructor(
     message: string,
-    public statusCode?: number,
-    public code?: string,
+    public code: string,
+    public statusCode: number = 500,
     public details?: any
   ) {
-    super(message);
-    this.name = 'ApiError';
+    super(message)
+    this.name = 'ApiError'
   }
 }
 
 export class DataQualityError extends Error {
   constructor(
     message: string,
-    public dataSource?: string,
+    public qualityScore: number,
     public details?: any
   ) {
-    super(message);
-    this.name = 'DataQualityError';
+    super(message)
+    this.name = 'DataQualityError'
   }
 }
 
 export class TimeoutError extends Error {
   constructor(
     message: string,
-    public timeoutDuration?: number,
-    public operation?: string
+    public timeout: number,
+    public operation: string
   ) {
-    super(message);
-    this.name = 'TimeoutError';
+    super(message)
+    this.name = 'TimeoutError'
   }
-}
-
-// エラーログ型定義
-interface ErrorLog {
-  session_id?: string;
-  error_type: string;
-  error_message: string;
-  error_details: any;
-  error_stack?: string;
-  created_at?: string;
 }
 
 // エラーハンドラークラス
 export class ErrorHandler {
-  static async handleApiError(
-    error: ApiError,
-    sessionId?: string
-  ): Promise<void> {
-    console.error('API Error:', {
-      message: error.message,
-      statusCode: error.statusCode,
-      code: error.code,
-      details: error.details,
-    });
-
-    await this.logError({
-      session_id: sessionId,
-      error_type: 'api_error',
-      error_message: error.message,
-      error_details: {
-        statusCode: error.statusCode,
-        code: error.code,
-        details: error.details,
-      },
-      error_stack: error.stack,
-    });
-  }
-
-  static async handleDataQualityError(
-    error: DataQualityError,
-    sessionId?: string
-  ): Promise<void> {
-    console.error('Data Quality Error:', {
-      message: error.message,
-      dataSource: error.dataSource,
-      details: error.details,
-    });
-
-    await this.logError({
-      session_id: sessionId,
-      error_type: 'data_quality_error',
-      error_message: error.message,
-      error_details: {
-        dataSource: error.dataSource,
-        details: error.details,
-      },
-      error_stack: error.stack,
-    });
-  }
-
-  static async handleTimeoutError(
-    error: TimeoutError,
-    sessionId?: string
-  ): Promise<void> {
-    console.error('Timeout Error:', {
-      message: error.message,
-      timeoutDuration: error.timeoutDuration,
-      operation: error.operation,
-    });
-
-    await this.logError({
-      session_id: sessionId,
-      error_type: 'timeout_error',
-      error_message: error.message,
-      error_details: {
-        timeoutDuration: error.timeoutDuration,
-        operation: error.operation,
-      },
-      error_stack: error.stack,
-    });
-  }
-
-  static async handleError(
+  static async logError(
     error: Error,
-    sessionId?: string
-  ): Promise<void> {
-    if (error instanceof ApiError) {
-      await this.handleApiError(error, sessionId);
-    } else if (error instanceof DataQualityError) {
-      await this.handleDataQualityError(error, sessionId);
-    } else if (error instanceof TimeoutError) {
-      await this.handleTimeoutError(error, sessionId);
-    } else {
-      console.error('Unexpected Error:', error);
-      await this.logError({
-        session_id: sessionId,
-        error_type: 'unexpected_error',
-        error_message: error.message,
-        error_details: {},
-        error_stack: error.stack,
-      });
+    context: {
+      sessionId?: string
+      agentName?: string
+      operation?: string
+      additionalInfo?: any
     }
-  }
+  ) {
+    console.error(`[${context.agentName || 'System'}] Error:`, {
+      name: error.name,
+      message: error.message,
+      stack: error.stack,
+      ...context
+    })
 
-  private static async logError(errorLog: ErrorLog): Promise<void> {
-    try {
-      // エラーログテーブルがまだ存在しない場合のため、progress_trackingに記録
-      if (errorLog.session_id) {
-        await supabase.from('progress_tracking').insert({
-          session_id: errorLog.session_id,
-          agent_name: 'error_handler',
-          status: 'error',
-          progress_percentage: 0,
-          message: `${errorLog.error_type}: ${errorLog.error_message}`,
-        });
-      }
-    } catch (logError) {
-      console.error('Failed to log error to Supabase:', logError);
-    }
-  }
-
-  // 再試行メカニズム（指数バックオフ）
-  static async withRetry<T>(
-    operation: () => Promise<T>,
-    maxRetries: number = 2,
-    initialDelay: number = 1000
-  ): Promise<T> {
-    let lastError: Error | undefined;
-
-    for (let attempt = 0; attempt <= maxRetries; attempt++) {
+    // Supabaseにエラーログを保存（オプション）
+    if (context.sessionId) {
       try {
-        return await operation();
+        const supabase = createClient()
+        await supabase.from('progress_tracking').insert({
+          session_id: context.sessionId,
+          agent_name: context.agentName || 'System',
+          status: 'error',
+          message: `Error: ${error.message}`,
+          progress_percentage: 0
+        })
+      } catch (logError) {
+        console.error('Failed to log error to Supabase:', logError)
+      }
+    }
+  }
+
+  static formatErrorResponse(error: Error): {
+    error: boolean
+    code: string
+    message: string
+    details?: any
+  } {
+    if (error instanceof ApiError) {
+      return {
+        error: true,
+        code: error.code,
+        message: error.message,
+        details: error.details
+      }
+    }
+
+    if (error instanceof DataQualityError) {
+      return {
+        error: true,
+        code: 'DATA_QUALITY_ERROR',
+        message: error.message,
+        details: {
+          qualityScore: error.qualityScore,
+          ...error.details
+        }
+      }
+    }
+
+    if (error instanceof TimeoutError) {
+      return {
+        error: true,
+        code: 'TIMEOUT_ERROR',
+        message: error.message,
+        details: {
+          timeout: error.timeout,
+          operation: error.operation
+        }
+      }
+    }
+
+    // 一般的なエラー
+    return {
+      error: true,
+      code: 'INTERNAL_ERROR',
+      message: error.message || 'An unexpected error occurred'
+    }
+  }
+
+  // 指数バックオフによる再試行
+  static async retry<T>(
+    fn: () => Promise<T>,
+    options: {
+      maxRetries?: number
+      initialDelay?: number
+      maxDelay?: number
+      factor?: number
+      onRetry?: (error: Error, attempt: number) => void
+    } = {}
+  ): Promise<T> {
+    const {
+      maxRetries = 3,
+      initialDelay = 1000,
+      maxDelay = 10000,
+      factor = 2,
+      onRetry
+    } = options
+
+    let lastError: Error
+    let delay = initialDelay
+
+    for (let attempt = 1; attempt <= maxRetries; attempt++) {
+      try {
+        return await fn()
       } catch (error) {
-        lastError = error as Error;
+        lastError = error as Error
         
         if (attempt === maxRetries) {
-          console.error(`操作が${maxRetries + 1}回失敗しました:`, error);
-          throw error;
+          throw lastError
         }
 
-        // 指数バックオフ: 1秒、2秒、4秒...
-        const delay = initialDelay * Math.pow(2, attempt);
-        console.warn(
-          `試行 ${attempt + 1}/${maxRetries + 1} が失敗しました。${delay}ms後に再試行します。`,
-          error
-        );
-        
-        await new Promise(resolve => setTimeout(resolve, delay));
+        if (onRetry) {
+          onRetry(lastError, attempt)
+        }
+
+        await new Promise(resolve => setTimeout(resolve, delay))
+        delay = Math.min(delay * factor, maxDelay)
       }
     }
 
-    throw lastError;
+    throw lastError!
   }
 
-  // エラーレスポンスの生成
-  static createErrorResponse(error: Error) {
-    if (error instanceof ApiError) {
-      return {
-        success: false,
-        error: {
-          code: error.code || 'API_ERROR',
-          message: error.message,
-          details: error.details,
-          statusCode: error.statusCode,
-        },
-      };
-    } else if (error instanceof DataQualityError) {
-      return {
-        success: false,
-        error: {
-          code: 'DATA_QUALITY_ERROR',
-          message: error.message,
-          details: {
-            dataSource: error.dataSource,
-            ...error.details,
-          },
-        },
-      };
-    } else if (error instanceof TimeoutError) {
-      return {
-        success: false,
-        error: {
-          code: 'TIMEOUT_ERROR',
-          message: error.message,
-          details: {
-            timeoutDuration: error.timeoutDuration,
-            operation: error.operation,
-          },
-        },
-      };
-    } else {
-      return {
-        success: false,
-        error: {
-          code: 'INTERNAL_ERROR',
-          message: error.message || '予期しないエラーが発生しました',
-          details: {},
-        },
-      };
-    }
+  // タイムアウト処理
+  static async withTimeout<T>(
+    promise: Promise<T>,
+    timeoutMs: number,
+    operation: string
+  ): Promise<T> {
+    return Promise.race([
+      promise,
+      new Promise<never>((_, reject) =>
+        setTimeout(
+          () => reject(new TimeoutError(
+            `Operation '${operation}' timed out after ${timeoutMs}ms`,
+            timeoutMs,
+            operation
+          )),
+          timeoutMs
+        )
+      )
+    ])
   }
 }

@@ -21,7 +21,15 @@
       "Bash(git push:*)",
       "Bash(gh pr create:*)",
       "Bash(git checkout:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(chmod:*)",
+      "Bash(API_BASE_URL=http://localhost:3002 node scripts/test-health-check.js)",
+      "Bash(API_BASE_URL=http://localhost:3002 node scripts/test-direct.js 9ed28dbf-b0c4-4c34-913b-109cd8f9b4f4)",
+      "Bash(API_BASE_URL=http://localhost:3002 node scripts/test-with-session.js)",
+      "Bash(API_BASE_URL=http://localhost:3002 node scripts/test-direct.js 8b6ccac3-84d3-428a-8484-3c8893fb0d19)",
+      "Bash(curl:*)",
+      "Bash(cp:*)",
+      "Bash(API_BASE_URL=http://localhost:3002 node scripts/test-direct.js 9ffeeac9-7e72-4086-9372-f013036399ec)"
     ],
     "deny": []
   }
