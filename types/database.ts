@@ -263,6 +263,47 @@ export interface Database {
           status?: string
         }
       }
+      research_data: {
+        Row: {
+          category: string
+          content: Json
+          created_at: string
+          data_type: string
+          id: string
+          reliability_score: number | null
+          session_id: string | null
+          source_url: string | null
+          subcategory: string | null
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          category: string
+          content: Json
+          created_at?: string
+          data_type: string
+          id?: string
+          reliability_score?: number | null
+          session_id?: string | null
+          source_url?: string | null
+          subcategory?: string | null
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          category?: string
+          content?: Json
+          created_at?: string
+          data_type?: string
+          id?: string
+          reliability_score?: number | null
+          session_id?: string | null
+          source_url?: string | null
+          subcategory?: string | null
+          title?: string
+          updated_at?: string
+        }
+      }
       sessions: {
         Row: {
           created_at: string

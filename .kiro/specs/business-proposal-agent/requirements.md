@@ -110,8 +110,8 @@ flowchart TD
     CUSTOM --> RESEARCH1[Research Agent: 市場・技術情報収集]
     DEFAULT --> RESEARCH1
     
-    RESEARCH1 --> IDEATION[Ideator Agent: 事業アイデア生成（5個）]
-    IDEATION --> CRITIC[Critic Agent: スケーラビリティ・ケイパビリティ親和性評価]
+    RESEARCH1 --> IDEATION[Ideator Agent: 事業アイデア生成（5個）+ ケイパビリティ活用シナリオ]
+    IDEATION --> CRITIC[Critic Agent: スケーラビリティ評価・ケイパビリティシナリオ妥当性評価]
     CRITIC --> SELECTION[最優先アイデア選定（1個）]
     SELECTION --> PLANNER[Planner Agent: TAM/SAM/SOM調査計画策定]
     PLANNER --> RESEARCH2[Research Agent: 詳細調査実行]
@@ -131,9 +131,9 @@ flowchart TD
 ### エージェント実行順序
 
 **基本フロー:**
-1. **Research Agent** - 市場トレンド幅広く情報収集
-2. **Ideator Agent** - ビジネスアイデアを5個生成
-3. **Critic Agent** - スケーラビリティおよびケイパビリティ親和性評価により1つのアイデアを選定
+1. **Research Agent** - 市場トレンド幅広く情報収集（12カテゴリの調査）
+2. **Ideator Agent** - ビジネスアイデアを5個生成、ケイパビリティとの組み合わせシナリオ作成
+3. **Critic Agent** - スケーラビリティ評価およびケイパビリティ活用シナリオの妥当性評価により1つのアイデアを選定
 4. **Planner Agent** - 選定された事業アイデアのTAM、SAM、SOMや競合プレーヤーなどの調査計画を立てる
 5. **Research Agent** - 調査計画に基づいて調査を実行
 6. **Analyst Agent** - 調査内容を整理・分析
@@ -196,9 +196,9 @@ Web画面上でレポートを直接表示・再表示できる機能が必要�
 | 大分類 | 機能 | 説明 |
 |--------|------|------|
 | ユーザー管理 | ログイン・ログアウト | Supabase Authを使用したユーザー認証 |
-| Research Agent | 市場情報収集 | SERPER APIを活用した市場情報収集 |
-| Ideator Agent | 事業アイデア生成 | 収益性の高い事業アイデア5個を創出 |
-| Critic Agent | アイデア評価・選定 | 5個のアイデアから1個の最優先アイデア選定 |
+| Research Agent | 市場情報収集 | SERPER APIを活用した市場情報収集（12カテゴリ調査） |
+| Ideator Agent | 事業アイデア生成 | 収益性の高い事業アイデア5個を創出、ケイパビリティ活用シナリオ生成 |
+| Critic Agent | アイデア評価・選定 | 5個のアイデアから1個の最優先アイデア選定、ケイパビリティシナリオ妥当性評価 |
 | Planner Agent | 調査計画策定 | 市場規模調査の詳細計画策定 |
 | Analyst Agent | データ分析 | 収集データの構造化と分析 |
 | Writer Agent | レポート生成 | 経営層向け事業提案レポートの生成 |

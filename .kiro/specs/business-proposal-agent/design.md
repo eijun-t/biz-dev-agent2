@@ -208,8 +208,7 @@ export async function POST(request: Request) {
 
 **責任:**
 - ユーザー入力の解析と調査計画策定
-- 市場・技術・トレンド情報の収集
-- 三菱地所ケイパビリティとの親和性評価
+- 市場・技術・トレンド情報の収集（12カテゴリ調査）
 - メモリコンテキストへのデータ保存
 
 **インターフェース:**
@@ -222,18 +221,13 @@ class InformationCollectionAgent {
       : await this.createDefaultResearchPlan(context);
     
     const marketData = await this.executeResearch(plan, context);
-    const affinityScores = await this.evaluateCapabilityAffinity(marketData, context);
     
-    return {
-      ...marketData,
-      capability_affinity: affinityScores
-    };
+    return marketData;
   }
   
   private async createCustomResearchPlan(userInput: string, context: SessionContext): Promise<ResearchPlan>
   private async createDefaultResearchPlan(context: SessionContext): Promise<ResearchPlan> // 全領域対応の12カテゴリ調査
   private async executeResearch(plan: ResearchPlan, context: SessionContext): Promise<MarketData>
-  private async evaluateCapabilityAffinity(data: MarketData, context: SessionContext): Promise<AffinityScore>
 }
 ```
 
@@ -242,8 +236,7 @@ class InformationCollectionAgent {
 2. 入力ありの場合：調査計画策定 → 関連情報収集
 3. 入力なしの場合：全領域対応の12カテゴリ調査
 4. 1000億円以上の市場規模を持つ事業機会の特定
-5. 三菱地所ケイパビリティとの親和性評価
-6. 結果をメモリコンテキストに保存（高速）
+5. 結果をメモリコンテキストに保存（高速）
 
 ### 4. アイディエーションエージェント (App Router API Routes)
 
@@ -251,6 +244,7 @@ class InformationCollectionAgent {
 - 収集情報に基づく事業アイデア生成
 - 既存アセットとの組み合わせ提案
 - 企業ネットワーク活用シナリオ作成
+- **三菱地所ケイパビリティとの組み合わせシナリオ生成**
 - メモリコンテキストからのデータ取得
 
 **インターフェース:**
@@ -260,10 +254,12 @@ class IdeationAgent {
   async generate(marketData: MarketData, context: SessionContext): Promise<BusinessIdea[]> {
     const mitsubishiAssets = await this.fetchMitsubishiAssets();
     const networkData = await this.fetchNetworkData();
+    const capabilities = await this.fetchMitsubishiCapabilities();
     
     const ideas = await this.generateBusinessIdeas(marketData, mitsubishiAssets, context);
     const enhancedIdeas = await this.enhanceWithAssetCombinations(ideas, mitsubishiAssets, context);
-    const finalIdeas = await this.addNetworkScenarios(enhancedIdeas, networkData, context);
+    const networkIdeas = await this.addNetworkScenarios(enhancedIdeas, networkData, context);
+    const finalIdeas = await this.generateCapabilityScenarios(networkIdeas, capabilities, context);
     
     return finalIdeas;
   }
@@ -271,8 +267,10 @@ class IdeationAgent {
   private async generateBusinessIdeas(marketData: MarketData, assets: MitsubishiAssets, context: SessionContext): Promise<BusinessIdea[]>
   private async enhanceWithAssetCombinations(ideas: BusinessIdea[], assets: MitsubishiAssets, context: SessionContext): Promise<BusinessIdea[]>
   private async addNetworkScenarios(ideas: BusinessIdea[], network: NetworkConnections, context: SessionContext): Promise<BusinessIdea[]>
+  private async generateCapabilityScenarios(ideas: BusinessIdea[], capabilities: Capability[], context: SessionContext): Promise<BusinessIdea[]>
   private async fetchMitsubishiAssets(): Promise<MitsubishiAssets>
   private async fetchNetworkData(): Promise<NetworkConnections>
+  private async fetchMitsubishiCapabilities(): Promise<Capability[]>
 }
 ```
 
@@ -280,6 +278,7 @@ class IdeationAgent {
 
 **責任:**
 - 6軸評価（独創性・実現可能性・市場性・シナジー適合性・競合優位性・リスクバランス）
+- **ケイパビリティ活用シナリオの妥当性評価**
 - 営業利益10億円達成可能性の数値化
 - 1000億円以上の市場規模での事業性評価
 - 最優先アイデアの選定
@@ -291,19 +290,22 @@ class IdeationAgent {
 class EvaluationAgent {
   async evaluate(ideas: BusinessIdea[], context: SessionContext): Promise<EvaluationResult[]> {
     const evaluations = await this.evaluateSixDimensions(ideas, context);
+    const capabilityEvaluations = await this.evaluateCapabilityScenarios(ideas, context);
     const profitProjections = await this.calculateProfitPotentials(ideas, context);
-    const selectedIdea = await this.selectTopIdea(evaluations, context);
+    const selectedIdea = await this.selectTopIdea(evaluations, capabilityEvaluations, context);
     
     return evaluations.map(eval => ({
       ...eval,
+      capability_evaluation: capabilityEvaluations.find(c => c.idea_id === eval.idea_id),
       profit_projection: profitProjections.find(p => p.idea_id === eval.idea_id),
       is_selected: eval.idea_id === selectedIdea.id
     }));
   }
   
   private async evaluateSixDimensions(ideas: BusinessIdea[], context: SessionContext): Promise<EvaluationResult[]>
+  private async evaluateCapabilityScenarios(ideas: BusinessIdea[], context: SessionContext): Promise<CapabilityEvaluation[]>
   private async calculateProfitPotentials(ideas: BusinessIdea[], context: SessionContext): Promise<ProfitProjection[]>
-  private async selectTopIdea(evaluations: EvaluationResult[], context: SessionContext): Promise<BusinessIdea>
+  private async selectTopIdea(evaluations: EvaluationResult[], capabilityEvals: CapabilityEvaluation[], context: SessionContext): Promise<BusinessIdea>
 }
 ```
 
