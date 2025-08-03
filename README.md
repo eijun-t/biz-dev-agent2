@@ -22,7 +22,9 @@ npm install
 - `SERPER_API_KEY`
 
 3. データベースのセットアップ
-Supabase SQL Editorで `/supabase/schema.sql` を実行
+Supabase SQL Editorで以下を実行：
+- `/supabase/schema.sql` - 基本テーブル
+- `/scripts/create_research_data_table.sql` - research_dataテーブル
 
 4. 開発サーバーの起動
 ```bash

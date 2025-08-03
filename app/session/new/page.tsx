@@ -8,6 +8,7 @@ export default function NewSession() {
   const [userInput, setUserInput] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [useLatestData, setUseLatestData] = useState(false);
   const router = useRouter();
 
   const handleStartSession = async (e: React.FormEvent) => {
@@ -44,7 +45,7 @@ export default function NewSession() {
         },
         body: JSON.stringify({
           session_id: session.id,
-          user_input: userInput || null
+          user_input: useLatestData ? `最新の${userInput || '全カテゴリトレンド'}` : (userInput || null)
         }),
       });
 
@@ -102,6 +103,25 @@ export default function NewSession() {
               <p className="mt-2 text-sm text-gray-500">
                 ※ 空欄の場合は、12カテゴリ全領域の調査を行います
               </p>
+            </div>
+
+            <div className="border rounded-lg p-4 bg-gray-50">
+              <label className="flex items-start">
+                <input
+                  type="checkbox"
+                  checked={useLatestData}
+                  onChange={(e) => setUseLatestData(e.target.checked)}
+                  className="mt-1 h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                />
+                <div className="ml-3">
+                  <span className="text-sm font-medium text-gray-700">
+                    最新のトレンドデータを取得する
+                  </span>
+                  <p className="text-xs text-gray-500 mt-1">
+                    チェックを外すと、既存の調査データを再利用します（高速処理）
+                  </p>
+                </div>
+              </label>
             </div>
 
             {error && (
