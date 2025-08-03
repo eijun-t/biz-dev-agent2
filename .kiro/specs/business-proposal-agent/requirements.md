@@ -81,7 +81,7 @@ graph TB
 | 用語 | 定義 |
 |------|------|
 | エージェント | 特定の機能を持つAIモジュール |
-| ケイパビリティ | 三菱地所のコア能力（不動産開発力・運営管理力・金融投資力・イノベーション力） |
+| ケイパビリティ | 三菱地所のコア能力（都市開発力・商業施設運営力・住宅事業力・国際事業力・イノベーション力・金融投資力） |
 | TAM | 総獲得可能市場（Total Addressable Market） |
 | SAM | 獲得可能市場（Serviceable Addressable Market） |
 | SOM | 実獲得可能市場（Serviceable Obtainable Market） |
@@ -110,7 +110,7 @@ flowchart TD
     CUSTOM --> RESEARCH1[Research Agent: 市場・技術情報収集]
     DEFAULT --> RESEARCH1
     
-    RESEARCH1 --> IDEATION[Ideator Agent: 事業アイデア生成（5個）]
+    RESEARCH1 --> IDEATION[Ideator Agent: 事業アイデア生成（5個）＋ケイパビリティ活用シナリオ]
     IDEATION --> CRITIC[Critic Agent: スケーラビリティ・ケイパビリティ親和性評価]
     CRITIC --> SELECTION[最優先アイデア選定（1個）]
     SELECTION --> PLANNER[Planner Agent: TAM/SAM/SOM調査計画策定]
@@ -132,7 +132,7 @@ flowchart TD
 
 **基本フロー:**
 1. **Research Agent** - 市場トレンド幅広く情報収集
-2. **Ideator Agent** - ビジネスアイデアを5個生成
+2. **Ideator Agent** - ビジネスアイデアを5個生成（制約なくアイディエーション）＋ケイパビリティ活用シナリオ作成
 3. **Critic Agent** - スケーラビリティおよびケイパビリティ親和性評価により1つのアイデアを選定
 4. **Planner Agent** - 選定された事業アイデアのTAM、SAM、SOMや競合プレーヤーなどの調査計画を立てる
 5. **Research Agent** - 調査計画に基づいて調査を実行
@@ -197,7 +197,7 @@ Web画面上でレポートを直接表示・再表示できる機能が必要�
 |--------|------|------|
 | ユーザー管理 | ログイン・ログアウト | Supabase Authを使用したユーザー認証 |
 | Research Agent | 市場情報収集 | SERPER APIを活用した市場情報収集 |
-| Ideator Agent | 事業アイデア生成 | 収益性の高い事業アイデア5個を創出 |
+| Ideator Agent | 事業アイデア生成 | 制約なく自由に事業アイデア5個を創出＋三菱地所ケイパビリティ活用シナリオ生成 |
 | Critic Agent | アイデア評価・選定 | 5個のアイデアから1個の最優先アイデア選定 |
 | Planner Agent | 調査計画策定 | 市場規模調査の詳細計画策定 |
 | Analyst Agent | データ分析 | 収集データの構造化と分析 |

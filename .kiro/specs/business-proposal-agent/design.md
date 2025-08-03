@@ -248,31 +248,31 @@ class InformationCollectionAgent {
 ### 4. アイディエーションエージェント (App Router API Routes)
 
 **責任:**
-- 収集情報に基づく事業アイデア生成
-- 既存アセットとの組み合わせ提案
-- 企業ネットワーク活用シナリオ作成
+- 収集情報に基づく事業アイデア生成（制約なく自由にアイディエーション）
+- 三菱地所ケイパビリティを活用したビジネス加速シナリオの作成
+- 「こういうケイパビリティを活かしてこのビジネスを加速できる」というストーリー生成
 - メモリコンテキストからのデータ取得
+
+**注意事項:**
+- ケイパビリティとの親和性評価・スコアリングはCriticエージェントで実施
+- この段階では詳細な財務計算は不要
 
 **インターフェース:**
 ```typescript
 // lib/agents/ideation-agent.ts
 class IdeationAgent {
   async generate(marketData: MarketData, context: SessionContext): Promise<BusinessIdea[]> {
-    const mitsubishiAssets = await this.fetchMitsubishiAssets();
-    const networkData = await this.fetchNetworkData();
+    // 制約なく自由にアイディエーション
+    const ideas = await this.generateBusinessIdeas(marketData, context);
     
-    const ideas = await this.generateBusinessIdeas(marketData, mitsubishiAssets, context);
-    const enhancedIdeas = await this.enhanceWithAssetCombinations(ideas, mitsubishiAssets, context);
-    const finalIdeas = await this.addNetworkScenarios(enhancedIdeas, networkData, context);
+    // ケイパビリティ活用シナリオの作成
+    const enhancedIdeas = await this.enhanceWithCapabilityScenarios(ideas, context);
     
-    return finalIdeas;
+    return enhancedIdeas;
   }
   
-  private async generateBusinessIdeas(marketData: MarketData, assets: MitsubishiAssets, context: SessionContext): Promise<BusinessIdea[]>
-  private async enhanceWithAssetCombinations(ideas: BusinessIdea[], assets: MitsubishiAssets, context: SessionContext): Promise<BusinessIdea[]>
-  private async addNetworkScenarios(ideas: BusinessIdea[], network: NetworkConnections, context: SessionContext): Promise<BusinessIdea[]>
-  private async fetchMitsubishiAssets(): Promise<MitsubishiAssets>
-  private async fetchNetworkData(): Promise<NetworkConnections>
+  private async generateBusinessIdeas(marketData: MarketData, context: SessionContext): Promise<BusinessIdea[]>
+  private async enhanceWithCapabilityScenarios(ideas: BusinessIdea[], context: SessionContext): Promise<BusinessIdea[]>
 }
 ```
 
@@ -280,6 +280,7 @@ class IdeationAgent {
 
 **責任:**
 - 6軸評価（独創性・実現可能性・市場性・シナジー適合性・競合優位性・リスクバランス）
+- **三菱地所ケイパビリティとの親和性評価**（アイディエーションエージェントでは評価しない）
 - 営業利益10億円達成可能性の数値化
 - 1000億円以上の市場規模での事業性評価
 - 最優先アイデアの選定
@@ -622,6 +623,12 @@ export interface MarketData {
   technologies: TechnologyTrend[];
   regulations: RegulationChange[];
   opportunities: MarketOpportunity[];
+}
+
+export interface BusinessIdeaWithCapability extends BusinessIdea {
+  capability_scenario?: string;
+  capability_categories?: string[];
+  network_partners?: string[];
 }
 
 export interface ResearchPlan {
