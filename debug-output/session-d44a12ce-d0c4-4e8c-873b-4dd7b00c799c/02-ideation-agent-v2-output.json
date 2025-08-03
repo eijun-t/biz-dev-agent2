@@ -1,0 +1,134 @@
+{
+  "timestamp": "2025-08-03T13:32:02.052Z",
+  "sessionId": "d44a12ce-d0c4-4e8c-873b-4dd7b00c799c",
+  "agent": "Ideation Agent V2",
+  "phase": "output",
+  "stepNumber": 2,
+  "duration": 45917,
+  "data": {
+    "success": true,
+    "ideas": [
+      {
+        "id": "bc29f898-e957-4d60-b982-03b18bd89902",
+        "session_id": "d44a12ce-d0c4-4e8c-873b-4dd7b00c799c",
+        "title": "AI不動産マッチングプラットフォーム",
+        "description": "AIを活用した不動産物件のマッチングプラットフォーム。ユーザーのニーズに基づき、最適な物件を自動的に提案。AIによる価格予測機能も搭載し、投資家向けの情報提供も行う。",
+        "target_market": "不動産投資家、購入希望者",
+        "market_size": 1000,
+        "revenue_model": "手数料収入、プレミアムプランの提供",
+        "initial_investment": 120,
+        "projected_profit": 15,
+        "timeline": "5-10年",
+        "mitsubishi_assets": [],
+        "capability_utilization": {},
+        "is_selected": false,
+        "created_at": "2025-08-03T13:32:01.9929+00:00",
+        "capability_scenario": "三菱地所の金融・投資力を活かして、具体的には日本リテールファンド投資法人や産業ファンド投資法人を活用し、AI不動産マッチングプラットフォーム向けの資金調達を行うことでビジネスを加速できる。さらにイノベーション力により、TMIPスマートシティプラットフォームを活用して、スタートアップ企業との連携を強化し、AI技術を駆使した物件マッチングと価格予測の精度向上を実現する。",
+        "capability_categories": [
+          "金融・投資力",
+          "イノベーション力"
+        ],
+        "network_partners": [
+          "スタートアップ"
+        ]
+      },
+      {
+        "id": "0ce5cf9e-e2d1-4f6e-836d-702ecbbea7cf",
+        "session_id": "d44a12ce-d0c4-4e8c-873b-4dd7b00c799c",
+        "title": "企業向けEdTechプラットフォーム",
+        "description": "企業の人材育成を支援するEdTechプラットフォーム。特にコミュニケーションやリーダーシップ研修を中心に、AIによる学習分析機能を提供し、効果的な研修を実現。",
+        "target_market": "企業の人事部門",
+        "market_size": 1000,
+        "revenue_model": "サブスクリプションモデル、コンサルティングサービス",
+        "initial_investment": 80,
+        "projected_profit": 12,
+        "timeline": "5-10年",
+        "mitsubishi_assets": [
+          "丸の内",
+          "アウトレット"
+        ],
+        "capability_utilization": {},
+        "is_selected": false,
+        "created_at": "2025-08-03T13:32:01.9929+00:00",
+        "capability_scenario": "三菱地所の商業施設運営力を活かして、具体的にはプレミアム・アウトレットや丸の内仲通りを活用し、企業向けEdTechプラットフォームの研修を実施する場として提供することでビジネスを加速できる。さらにイノベーション力によって、TMIPスマートシティプラットフォームを介してスタートアップ企業と連携し、デジタル学習体験の向上を図ることができる。",
+        "capability_categories": [
+          "商業施設運営力",
+          "イノベーション力"
+        ],
+        "network_partners": [
+          "スタートアップ"
+        ]
+      },
+      {
+        "id": "86856709-ca69-465b-a9dc-5b808fab21d0",
+        "session_id": "d44a12ce-d0c4-4e8c-873b-4dd7b00c799c",
+        "title": "高齢者向けスマートモビリティサービス",
+        "description": "高齢者が安全に移動できるためのスマートモビリティサービス。アプリを通じて、近隣の運転手と高齢者をマッチングし、非接触型の移動支援を行う。",
+        "target_market": "高齢者、介護施設、家族",
+        "market_size": 1000,
+        "revenue_model": "マッチング手数料、サブスクリプション",
+        "initial_investment": 100,
+        "projected_profit": 10,
+        "timeline": "5-10年",
+        "mitsubishi_assets": [
+          "みなとみらい"
+        ],
+        "capability_utilization": {},
+        "is_selected": false,
+        "created_at": "2025-08-03T13:32:01.9929+00:00",
+        "capability_scenario": "三菱地所の都市開発力を活かして、具体的にはみなとみらい21を活用し、高齢者向けスマートモビリティサービスの実証実験フィールドとして利用することでビジネスを加速できる。さらにイノベーション力を駆使して、スタートアップ企業や大学との協力を通じて、技術の検証と改良を進め、より安全で快適な移動支援サービスを提供する。",
+        "capability_categories": [
+          "都市開発力",
+          "イノベーション力"
+        ],
+        "network_partners": [
+          "スタートアップ"
+        ]
+      },
+      {
+        "id": "36c4ee41-7e4d-4edd-a397-fa317ffeddb0",
+        "session_id": "d44a12ce-d0c4-4e8c-873b-4dd7b00c799c",
+        "title": "モバイルヘルスケアプラットフォーム",
+        "description": "ユーザーの健康データを収集・分析し、個別の健康アドバイスを提供するモバイルアプリ。企業向けにウェルネスプログラムも展開。",
+        "target_market": "個人、企業",
+        "market_size": 1000,
+        "revenue_model": "サブスクリプション、企業向けプラン",
+        "initial_investment": 160,
+        "projected_profit": 24,
+        "timeline": "5-10年",
+        "mitsubishi_assets": [],
+        "capability_utilization": {},
+        "is_selected": false,
+        "created_at": "2025-08-03T13:32:01.9929+00:00",
+        "capability_scenario": "三菱地所の商業施設運営力を活かして、具体的にはアクアシティお台場をエコ商品の販売拠点として活用し、サステナブル商品販売プラットフォームの展開を行うことでビジネスを加速できる。さらに、イノベーション力により、TMIPスマートシティプラットフォームを利用して、環境意識の高いスタートアップ企業との共同プロジェクトを実施し、持続可能な商品の流通を促進する。",
+        "capability_categories": [
+          "商業施設運営力",
+          "イノベーション力"
+        ],
+        "network_partners": [
+          "スタートアップ"
+        ]
+      },
+      {
+        "id": "f52a0745-2f21-4ed7-9443-ba89c5da0ebd",
+        "session_id": "d44a12ce-d0c4-4e8c-873b-4dd7b00c799c",
+        "title": "サステナブル商品販売プラットフォーム",
+        "description": "エコ商品やサステナブルな製品を専門に扱うオンラインマーケットプレイス。消費者が持続可能な選択をできるための情報提供やコミュニティ機能も併設。",
+        "target_market": "エコ意識の高い消費者",
+        "market_size": 1000,
+        "revenue_model": "手数料収入、広告収入",
+        "initial_investment": 120,
+        "projected_profit": 15,
+        "timeline": "5-10年",
+        "mitsubishi_assets": [],
+        "capability_utilization": {},
+        "is_selected": false,
+        "created_at": "2025-08-03T13:32:01.9929+00:00",
+        "capability_scenario": "",
+        "capability_categories": [],
+        "network_partners": []
+      }
+    ],
+    "count": 5
+  }
+}

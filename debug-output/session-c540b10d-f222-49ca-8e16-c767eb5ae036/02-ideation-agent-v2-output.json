@@ -1,0 +1,132 @@
+{
+  "timestamp": "2025-08-03T11:41:05.305Z",
+  "sessionId": "c540b10d-f222-49ca-8e16-c767eb5ae036",
+  "agent": "Ideation Agent V2",
+  "phase": "output",
+  "stepNumber": 2,
+  "duration": 42265,
+  "data": {
+    "success": true,
+    "ideas": [
+      {
+        "id": "a3313b10-0c2f-49f4-8f43-bc5bcc8d2ceb",
+        "session_id": "c540b10d-f222-49ca-8e16-c767eb5ae036",
+        "title": "AI不動産アナリティクスプラットフォーム",
+        "description": "AIを活用した不動産マーケットアナリティクスプラットフォーム。物件データ、地域データ、トレンド分析を統合し、投資家向けに最適な物件提案を行うサービス。",
+        "target_market": "不動産投資家、業者",
+        "market_size": 1000,
+        "revenue_model": "サブスクリプションモデル、プレミアム機能課金",
+        "initial_investment": 100,
+        "projected_profit": 13,
+        "timeline": "5-10年",
+        "mitsubishi_assets": [],
+        "capability_utilization": {},
+        "is_selected": false,
+        "created_at": "2025-08-03T11:41:05.152129+00:00",
+        "capability_scenario": "三菱地所の金融・投資力を活かして、具体的には日本リテールファンド投資法人や産業ファンド投資法人を通じた資金調達を行い、高齢者向けスマートモビリティサービスのインフラ整備を実現することでビジネスを加速できる。さらに、イノベーション力を活用し、TMIPスマートシティプラットフォームを通じてスタートアップ企業との連携を強化し、地域交通網との統合を進めることで、ユーザーの利便性を高める。",
+        "capability_categories": [
+          "金融・投資力",
+          "イノベーション力"
+        ],
+        "network_partners": [
+          "スタートアップ"
+        ]
+      },
+      {
+        "id": "77694636-917e-4a97-b0fd-273e5ff6939d",
+        "session_id": "c540b10d-f222-49ca-8e16-c767eb5ae036",
+        "title": "企業向けEdTechコミュニケーション研修",
+        "description": "企業向けに特化したEdTechを活用したオンラインコミュニケーション研修サービス。AIによる個別学習プランを提供し、従業員のスキル向上を図る。",
+        "target_market": "中小企業、大企業の人事部門",
+        "market_size": 1000,
+        "revenue_model": "年間ライセンス料、受講料",
+        "initial_investment": 80,
+        "projected_profit": 12,
+        "timeline": "5-10年",
+        "mitsubishi_assets": [],
+        "capability_utilization": {},
+        "is_selected": false,
+        "created_at": "2025-08-03T11:41:05.152129+00:00",
+        "capability_scenario": "三菱地所の商業施設運営力を活かして、具体的にはアクアシティお台場を舞台に没入型エンターテインメント体験施設を開発し、テナント企業やエンターテインメント企業とのネットワークを活用して多様なコンテンツを提供することでビジネスを加速できる。さらに、イノベーション力を活用し、AR/VR技術を駆使した新しい体験を実装するために、スタートアップ企業とのオープンイノベーションを推進する。",
+        "capability_categories": [
+          "商業施設運営力",
+          "イノベーション力"
+        ],
+        "network_partners": [
+          "テナント企業",
+          "スタートアップ"
+        ]
+      },
+      {
+        "id": "8a8ec12e-e06e-4a4f-81cf-95f101c9d413",
+        "session_id": "c540b10d-f222-49ca-8e16-c767eb5ae036",
+        "title": "高齢者向けスマートモビリティサービス",
+        "description": "高齢者の移動をサポートするためのスマートモビリティサービス。アプリを通じて、安全な交通手段を提供し、地域の交通網と連携する。",
+        "target_market": "高齢者、介護施設",
+        "market_size": 1000,
+        "revenue_model": "利用料、スポンサーシップ",
+        "initial_investment": 120,
+        "projected_profit": 12,
+        "timeline": "5-10年",
+        "mitsubishi_assets": [
+          "みなとみらい"
+        ],
+        "capability_utilization": {},
+        "is_selected": false,
+        "created_at": "2025-08-03T11:41:05.152129+00:00",
+        "capability_scenario": "三菱地所の都市開発力を活かして、具体的にはみなとみらい21のエリアをスマートシティとして再開発し、長期的な街づくりビジョンを持つことでビジネスを加速できる。さらにイノベーション力を活用し、Mec Industry DXセンターを拠点にスタートアップ企業や大学との共同開発を推進し、最新のデジタル技術を導入することで、持続可能な都市環境を実現する。",
+        "capability_categories": [
+          "都市開発力",
+          "イノベーション力"
+        ],
+        "network_partners": [
+          "スタートアップ"
+        ]
+      },
+      {
+        "id": "af63a682-34f7-407b-9059-3895096d958d",
+        "session_id": "c540b10d-f222-49ca-8e16-c767eb5ae036",
+        "title": "没入型エンターテインメント体験施設",
+        "description": "AR/VR技術を駆使した没入型エンターテインメント施設。観光客や家族向けに特化し、ユニークな体験を提供する。",
+        "target_market": "観光客、家族連れ",
+        "market_size": 1000,
+        "revenue_model": "入場料、コンテンツ販売",
+        "initial_investment": 100,
+        "projected_profit": 15,
+        "timeline": "5-10年",
+        "mitsubishi_assets": [
+          "丸の内"
+        ],
+        "capability_utilization": {},
+        "is_selected": false,
+        "created_at": "2025-08-03T11:41:05.152129+00:00",
+        "capability_scenario": "三菱地所の金融・投資力を活かして、具体的にはプライベートREITを通じて資金を集め、デジタルヘルスケアプラットフォームの開発に投資することでビジネスを加速できる。さらに商業施設運営力を活用し、丸の内仲通りの高級ブランド店舗と連携して、ウェルネスツーリズムをテーマにした新たなサービスを提供することで、顧客の健康管理をサポートする。",
+        "capability_categories": [
+          "金融・投資力",
+          "商業施設運営力"
+        ],
+        "network_partners": []
+      },
+      {
+        "id": "ff580d97-8f42-4ce7-8b0a-7cb8932da8a8",
+        "session_id": "c540b10d-f222-49ca-8e16-c767eb5ae036",
+        "title": "デジタルヘルスケアプラットフォーム",
+        "description": "デジタル化されたヘルスケアサービスを提供するプラットフォーム。ウェルネスツーリズムや健康管理を一元化し、企業向けに提供する。",
+        "target_market": "企業、健康志向の個人",
+        "market_size": 1000,
+        "revenue_model": "サブスクリプション、パートナーシップ",
+        "initial_investment": 80,
+        "projected_profit": 10,
+        "timeline": "5-10年",
+        "mitsubishi_assets": [],
+        "capability_utilization": {},
+        "is_selected": false,
+        "created_at": "2025-08-03T11:41:05.152129+00:00",
+        "capability_scenario": "",
+        "capability_categories": [],
+        "network_partners": []
+      }
+    ],
+    "count": 5
+  }
+}

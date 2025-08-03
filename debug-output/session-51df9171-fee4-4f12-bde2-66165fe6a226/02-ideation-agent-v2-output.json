@@ -1,0 +1,135 @@
+{
+  "timestamp": "2025-08-03T09:46:51.764Z",
+  "sessionId": "51df9171-fee4-4f12-bde2-66165fe6a226",
+  "agent": "Ideation Agent V2",
+  "phase": "output",
+  "stepNumber": 2,
+  "duration": 41201,
+  "data": {
+    "success": true,
+    "ideas": [
+      {
+        "id": "4ebae5b7-6b90-4dba-94cc-9596ae422173",
+        "session_id": "51df9171-fee4-4f12-bde2-66165fe6a226",
+        "title": "AI不動産マネジメントプラットフォーム",
+        "description": "AIを活用して不動産管理の効率化を図るプラットフォームを提供。物件の価値評価、賃貸管理、顧客対応を自動化し、管理コストを削減。",
+        "target_market": "不動産管理会社、投資家",
+        "market_size": 1000,
+        "revenue_model": "サブスクリプションモデル、トランザクション手数料",
+        "initial_investment": 60,
+        "projected_profit": 9,
+        "timeline": "5-10年",
+        "mitsubishi_assets": [],
+        "capability_utilization": {},
+        "is_selected": false,
+        "created_at": "2025-08-03T09:46:51.668905+00:00",
+        "capability_scenario": "三菱地所の金融・投資力を活かして、具体的には日本リテールファンド投資法人の資金調達力を活用し、デジタルヘルスケアプラットフォームの拡張に必要な資金を確保することでビジネスを加速できる。さらに、イノベーション力により、TMIPスマートシティプラットフォームを通じてスタートアップ企業やテクノロジー企業との連携を強化し、健康データ分析に基づく新たなサービスの開発を推進する。",
+        "capability_categories": [
+          "金融・投資力",
+          "イノベーション力"
+        ],
+        "network_partners": [
+          "スタートアップ"
+        ]
+      },
+      {
+        "id": "e3063715-2050-4c26-b9b8-174aebc57ff1",
+        "session_id": "51df9171-fee4-4f12-bde2-66165fe6a226",
+        "title": "企業向けEdTechプラットフォーム",
+        "description": "企業のニーズに応じたコミュニケーションやリーダーシップの研修を提供するオンラインプラットフォーム。AIを活用した個別学習プランを作成。",
+        "target_market": "企業、教育機関",
+        "market_size": 1000,
+        "revenue_model": "年間ライセンスフィー",
+        "initial_investment": 50,
+        "projected_profit": 6,
+        "timeline": "5-10年",
+        "mitsubishi_assets": [
+          "アウトレット"
+        ],
+        "capability_utilization": {},
+        "is_selected": false,
+        "created_at": "2025-08-03T09:46:51.668905+00:00",
+        "capability_scenario": "三菱地所の商業施設運営力を活かして、具体的にはプレミアム・アウトレットのテナント企業との関係を強化し、企業向けEdTechプラットフォームを活用したコミュニケーションやリーダーシップ研修を実施することでビジネスを加速できる。さらに、イノベーション力により、Mec Industry DXセンターを利用してデジタル技術を活用した新たな学習プログラムを開発し、受講企業の満足度を向上させる。",
+        "capability_categories": [
+          "商業施設運営力",
+          "イノベーション力"
+        ],
+        "network_partners": [
+          "テナント企業"
+        ]
+      },
+      {
+        "id": "88d0d95a-8836-4002-966c-27de55228de5",
+        "session_id": "51df9171-fee4-4f12-bde2-66165fe6a226",
+        "title": "高齢者向けスマートモビリティサービス",
+        "description": "高齢者向けに安全で便利な交通手段を提供するサービス。デジタル技術を活用して、リアルタイムでの交通状況把握と予約機能を実装。",
+        "target_market": "高齢者、介護施設",
+        "market_size": 1000,
+        "revenue_model": "利用料、サブスクリプション",
+        "initial_investment": 40,
+        "projected_profit": 4,
+        "timeline": "5-10年",
+        "mitsubishi_assets": [
+          "パークハウス"
+        ],
+        "capability_utilization": {},
+        "is_selected": false,
+        "created_at": "2025-08-03T09:46:51.668905+00:00",
+        "capability_scenario": "三菱地所の住宅事業力を活かして、具体的にはザ・パークハウスシリーズの高品質な住宅開発を通じて高齢者向けスマートモビリティサービスを導入し、快適な居住環境を提供することでビジネスを加速できる。さらに、イノベーション力により、TMIPスマートシティプラットフォームを活用してスタートアップ企業と連携し、高齢者向けの交通手段のデジタル化を進める。",
+        "capability_categories": [
+          "住宅事業力",
+          "イノベーション力"
+        ],
+        "network_partners": [
+          "スタートアップ"
+        ]
+      },
+      {
+        "id": "9f98bcf8-711f-4e25-9f88-66eff5680e57",
+        "session_id": "51df9171-fee4-4f12-bde2-66165fe6a226",
+        "title": "没入型体験型観光サービス",
+        "description": "ARやVRを活用した新しい形の観光体験を提供。訪問する場所に合わせた没入型のストーリー体験を提供し、観光の質を向上。",
+        "target_market": "観光業界、旅行者",
+        "market_size": 1000,
+        "revenue_model": "チケット販売、提携先からの収益シェア",
+        "initial_investment": 80,
+        "projected_profit": 14,
+        "timeline": "5-10年",
+        "mitsubishi_assets": [
+          "みなとみらい"
+        ],
+        "capability_utilization": {},
+        "is_selected": false,
+        "created_at": "2025-08-03T09:46:51.668905+00:00",
+        "capability_scenario": "三菱地所の都市開発力を活かして、具体的にはみなとみらい21の大規模複合開発を活用し、没入型体験型観光サービスを導入することでビジネスを加速できる。さらに、イノベーション力により、スタートアップ支援施設を通じて新たなAR/VR技術を持つ企業と連携し、観光体験の質を向上させる。",
+        "capability_categories": [
+          "都市開発力",
+          "イノベーション力"
+        ],
+        "network_partners": [
+          "スタートアップ"
+        ]
+      },
+      {
+        "id": "61b3af97-3c0e-494c-b215-447907de61ac",
+        "session_id": "51df9171-fee4-4f12-bde2-66165fe6a226",
+        "title": "デジタルヘルスケアプラットフォーム",
+        "description": "ヘルスケアとウェルネスをサポートするデジタルプラットフォーム。健康データのモニタリングや、個別の健康アドバイスを提供。",
+        "target_market": "医療機関、個人消費者",
+        "market_size": 1000,
+        "revenue_model": "月額利用料、データ提供料",
+        "initial_investment": 120,
+        "projected_profit": 15,
+        "timeline": "5-10年",
+        "mitsubishi_assets": [],
+        "capability_utilization": {},
+        "is_selected": false,
+        "created_at": "2025-08-03T09:46:51.668905+00:00",
+        "capability_scenario": "",
+        "capability_categories": [],
+        "network_partners": []
+      }
+    ],
+    "count": 5
+  }
+}

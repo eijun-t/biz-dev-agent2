@@ -25,7 +25,11 @@
       "Bash(curl:*)",
       "Bash(npm test:*)",
       "Bash(grep:*)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "Bash(chmod:*)",
+      "Bash(tsx scripts/test-research-to-ideation.ts:*)",
+      "Bash(npx tsx:*)",
+      "Bash(true)"
     ],
     "deny": []
   }

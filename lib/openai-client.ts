@@ -62,7 +62,6 @@ export class OpenAIClient {
     count: number = 5,
     options: OpenAIRequestOptions = {}
   ): Promise<string> {
-    console.log('[OpenAI Client] Generating business ideas...');
     const prompt = `市場データに基づいて、革新的なビジネスアイデアを${count}個生成してください。
     
 市場データ:
@@ -91,13 +90,11 @@ ${JSON.stringify(marketData, null, 2)}
 
     const messages = [{ role: 'user', content: prompt }];
     
-    console.log('[OpenAI Client] Calling OpenAI API...');
     const result = await this.makeRequest(messages, {
       ...options,
       temperature: 0.8 // より創造的なアイデア生成のため高めに設定
     });
     
-    console.log('[OpenAI Client] Response received:', result.substring(0, 100) + '...');
     return result;
   }
 
@@ -174,29 +171,8 @@ ${JSON.stringify(capabilities, null, 2)}
 
     const messages = [{ role: 'user', content: prompt }];
     
-    console.log('[OpenAI enhanceWithCapabilities] Sending request...');
     const result = await this.makeRequest(messages, options);
-    console.log('[OpenAI enhanceWithCapabilities] Raw response:', result.substring(0, 500) + '...');
     return result;
-  }
-
-  // 旧メソッドは削除または非推奨として残す
-  static async enhanceWithAssets(
-    ideas: any[],
-    assets: any,
-    options: OpenAIRequestOptions = {}
-  ): Promise<string> {
-    // 互換性のために残すが、実際はケイパビリティ統合版を使用
-    return this.enhanceWithCapabilities(ideas, [], options);
-  }
-  
-  static async addNetworkScenarios(
-    ideas: any[],
-    networkData: any,
-    options: OpenAIRequestOptions = {}
-  ): Promise<string> {
-    // 互換性のために残すが、実際はケイパビリティ統合版を使用
-    return this.enhanceWithCapabilities(ideas, [], options);
   }
 
   // 指数バックオフによる再試行メカニズム
@@ -215,7 +191,6 @@ ${JSON.stringify(capabilities, null, 2)}
         
         if (i < maxRetries - 1) {
           const delay = initialDelay * Math.pow(2, i);
-          console.log(`Retrying after ${delay}ms... (attempt ${i + 2}/${maxRetries})`);
           await new Promise(resolve => setTimeout(resolve, delay));
         }
       }

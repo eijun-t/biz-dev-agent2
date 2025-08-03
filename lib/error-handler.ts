@@ -58,4 +58,40 @@ export class ErrorHandler {
     console.error('Error occurred:', error);
     // 必要に応じて外部ログサービスに送信
   }
+
+  static formatErrorResponse(error: Error): any {
+    if (error instanceof ApiError) {
+      return {
+        error: true,
+        code: error.name,
+        message: error.message,
+        details: error.details
+      };
+    }
+    
+    if (error instanceof DataQualityError) {
+      return {
+        error: true,
+        code: 'DATA_QUALITY_ERROR',
+        message: error.message,
+        quality: error.quality
+      };
+    }
+    
+    if (error instanceof TimeoutError) {
+      return {
+        error: true,
+        code: 'TIMEOUT_ERROR',
+        message: error.message,
+        operation: error.operation
+      };
+    }
+    
+    // デフォルトのエラーレスポンス
+    return {
+      error: true,
+      code: 'INTERNAL_ERROR',
+      message: error.message || 'An unexpected error occurred'
+    };
+  }
 }

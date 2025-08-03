@@ -1,13 +1,18 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { IdeationAgentV2 } from '@/lib/agents/ideation-agent-v2';
 import { SessionContext } from '@/types/memory';
+import { debugLogger } from '@/lib/debug-logger';
 
 export async function POST(request: NextRequest) {
   console.log('[Ideation V2 Route] Request received at:', new Date().toISOString());
+  const startTime = Date.now();
   
   try {
     const body = await request.json();
     const { sessionId, marketData } = body;
+    
+    // デバッグ: リクエストログ
+    await debugLogger.logApiCall(sessionId || 'unknown', 'Ideation Agent V2', 'request', body);
     
     console.log('[Ideation V2 Route] Session ID:', sessionId);
     
@@ -41,14 +46,22 @@ export async function POST(request: NextRequest) {
     
     console.log('[Ideation V2 Route] Success! Generated ideas:', businessIdeas.length);
     
-    return NextResponse.json({
+    const response = {
       success: true,
       ideas: businessIdeas,
       count: businessIdeas.length
-    });
+    };
+    
+    // デバッグ: レスポンスログ
+    await debugLogger.logApiCall(sessionId, 'Ideation Agent V2', 'response', response, startTime);
+    
+    return NextResponse.json(response);
     
   } catch (error) {
     console.error('[Ideation V2 Route] Error:', error);
+    
+    // デバッグ: エラーログ
+    await debugLogger.logError(sessionId || 'unknown', 'Ideation Agent V2', error);
     
     return NextResponse.json(
       {

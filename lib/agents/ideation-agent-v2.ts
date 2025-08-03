@@ -1,4 +1,3 @@
-import { BaseAgent } from './base-agent';
 import { OpenAIClient } from '../openai-client';
 import { supabaseAdmin } from '../supabase-admin';
 import { ApiError } from '../error-handler';
@@ -9,7 +8,7 @@ import {
 } from '../../types/memory';
 import { MITSUBISHI_CAPABILITIES } from '../mitsubishi-capabilities';
 
-export class IdeationAgentV2 extends BaseAgent {
+export class IdeationAgentV2 {
   async generate(marketData: MarketData, context: SessionContext): Promise<BusinessIdea[]> {
     const sessionId = context.sessionId;
     
@@ -45,6 +44,41 @@ export class IdeationAgentV2 extends BaseAgent {
       return finalIdeas;
     } catch (error) {
       await this.updateProgress(sessionId, 'ideation_agent_v2', 0, 'エラーが発生しました', 'error');
+      throw error;
+    }
+  }
+  
+  private async updateProgress(
+    sessionId: string,
+    agentName: string,
+    percentage: number,
+    message: string,
+    status: 'started' | 'in_progress' | 'completed' | 'error' = 'in_progress'
+  ): Promise<void> {
+    try {
+      await supabaseAdmin
+        .from('progress_tracking')
+        .insert({
+          session_id: sessionId,
+          agent_name: agentName,
+          status,
+          progress_percentage: percentage,
+          message
+        });
+    } catch (error) {
+      console.error('Progress update failed:', error);
+    }
+  }
+  
+  private async executeWithErrorHandling<T>(
+    operation: () => Promise<T>,
+    operationName: string,
+    _sessionId: string
+  ): Promise<T> {
+    try {
+      return await operation();
+    } catch (error) {
+      console.error(`${operationName} failed:`, error);
       throw error;
     }
   }
@@ -99,14 +133,12 @@ export class IdeationAgentV2 extends BaseAgent {
     return this.executeWithErrorHandling(
       async () => {
         // LLMを使って各アイデアに最適なケイパビリティを選択
-        console.log('[V2] Selecting capabilities using LLM...');
         const selectionResponse = await OpenAIClient.withRetry(
           () => OpenAIClient.selectCapabilitiesForIdeas(ideas, MITSUBISHI_CAPABILITIES)
         );
         
         const cleanedSelectionResponse = selectionResponse.replace(/```json\s*/g, '').replace(/```\s*/g, '').trim();
         const capabilitySelections = JSON.parse(cleanedSelectionResponse);
-        console.log('[V2] Capability selections:', JSON.stringify(capabilitySelections, null, 2));
         
         // 選択されたケイパビリティをアイデアに追加
         const ideasWithCapabilities = ideas.map((idea, index) => {
@@ -129,10 +161,8 @@ export class IdeationAgentV2 extends BaseAgent {
         );
         
         try {
-          console.log('[V2] OpenAI Response:', response.substring(0, 200) + '...');
           const cleanedResponse = response.replace(/```json\s*/g, '').replace(/```\s*/g, '').trim();
           const enhancedIdeas = JSON.parse(cleanedResponse);
-          console.log('[V2] Enhanced Ideas:', JSON.stringify(enhancedIdeas, null, 2).substring(0, 500) + '...');
           
           // 配列の長さを確認
           if (!Array.isArray(enhancedIdeas)) {

@@ -1,0 +1,1213 @@
+{
+  "timestamp": "2025-08-03T13:31:16.100Z",
+  "sessionId": "d44a12ce-d0c4-4e8c-873b-4dd7b00c799c",
+  "agent": "Research Agent",
+  "phase": "output",
+  "stepNumber": 2,
+  "duration": 27183,
+  "data": {
+    "success": true,
+    "data": {
+      "userAnalysis": "`",
+      "categoryTrends": [
+        {
+          "category": {
+            "id": "datatech",
+            "name": "データ・AI活用",
+            "description": "ビッグデータ・AIの不動産活用",
+            "keywords": [
+              "不動産AI",
+              "ビッグデータ",
+              "予測分析",
+              "デジタルツイン"
+            ],
+            "focusAreas": [
+              "AI価格査定",
+              "需要予測",
+              "最適化アルゴリズム",
+              "IoTデータ活用"
+            ]
+          },
+          "trends": [
+            {
+              "title": "2024年版 最新のデータ活用基盤とは？グローバル企業の事例も紹介！",
+              "source": "https://cloud.sojitz-ti.com/blog/datapratform_2024/",
+              "description": "データ活用基盤の2024年トレンドは AI  データモデルの作成が自動化 かつて職人技だったデータモデルの作成はツールが大部分を代替できるようになっており、AIがデータの分析を自動化、パターンの発見や予測をリアルタイムで行います。",
+              "reliability": 0.6
+            },
+            {
+              "title": "【徹底解説】2024年の生成AIトレンドの振り返りと2025年の展望 - HP",
+              "source": "https://jp.ext.hp.com/techdevice/ai/ai_explained_01/",
+              "description": "2024年のAI分野における最大のトピックの一つが、マルチモーダルAIの進化です。これにより、AIはテキストだけでなく、画像、音声、動画といった様々な形式のデータを ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "2024年のAI事情を振り返り、2025年の最新トレンドを予想！",
+              "source": "https://www.agentec.jp/blog/index.php/2025/01/09/agt-ai-018/",
+              "description": "2024年を通じて見えたAIの主要トレンド 2024年には、ChatGPTをはじめとする大規模言語モデル（LLM）がさらなる進化を遂げました。 これらのモデルは、数千億から数兆パラメ ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "【2025年予測】生成AI日本市場規模と成長分野 - HP",
+              "source": "https://jp.ext.hp.com/techdevice/ai/ai_explained_16/",
+              "marketSize": {
+                "unit": "億円",
+                "year": 2023,
+                "value": 28
+              },
+              "description": "IDC Japan：2023年から2028年にかけての年平均成長率（CAGR）を84.4%と予測し、2028年には市場規模が8,028億円に達するとしています。",
+              "reliability": 0.7
+            },
+            {
+              "title": "世界と日本の「生成AI市場」を徹底図解、急成長市場をけん引する ...",
+              "source": "https://www.sbbit.jp/article/cont1/121341",
+              "description": "世界の生成AI市場は2024年に209億米ドル規模に達し、2024年から2030年にかけて約37%のCAGR （年平均成長率）で成長し、2030年には1367億米ドル規模に達する見込みです。",
+              "reliability": 0.7
+            },
+            {
+              "title": "日本における生成AI市場の将来展望（今後10年間） - 株式会社メイト",
+              "source": "https://mates-promo.com/article/%E6%97%A5%E6%9C%AC%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B%E7%94%9F%E6%88%90ai%E5%B8%82%E5%A0%B4%E3%81%AE%E5%B0%86%E6%9D%A5%E5%B1%95%E6%9C%9B%EF%BC%88%E4%BB%8A%E5%BE%8C10%E5%B9%B4%E9%96%93%EF%BC%89/",
+              "description": "日本の生成AI市場は今後10年間で急速な拡大が見込まれます。国内市場規模は2020年代後半から2030年頃にかけて年率30～40%以上で成長すると予測されています。",
+              "reliability": 0.7
+            },
+            {
+              "title": "生成AIは不動産ビジネスにどのような変革をもたらすのか | EY Japan",
+              "source": "https://www.ey.com/ja_jp/insights/real-estate-hospitality-construction/generative-ai-in-real-estate",
+              "description": "生成AIは、不動産会社のビジネスの手法を変えることを通じて、不動産の管理運営や取得戦略、ポートフォリオプランニングを支援することができる。 今後は安全で、責任ある ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "AIが不動産業界を変革する！最新活用事例と導入メリットを徹底解説",
+              "source": "https://tsukuru-ai.co.jp/innovation/ai_merit_realestate",
+              "description": "不動産業界におけるAIの活用は、業務効率化や顧客満足度の向上、新たなビジネス機会の創出など、多くのメリットをもたらしています。 AIによる物件査定、チャット ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "【不動産デベロッパー】開発の未来を拓く！営業DXとAI活用最前線",
+              "source": "https://jdnw.jp/column/realestate-dx-ai/",
+              "description": "株式会社ライトアップが運営するJDネットでは、AIによる営業力強化や最適なDXソリューションのご提案、全国1000社のネットワークを通じて、商材の販路拡大や新たな事業機会 ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "15社のビッグデータ活用事例から学ぶ、成果につながる活用の方法",
+              "source": "https://liskul.com/wm_bd10-4861",
+              "description": "ビッグデータを活用することで、以下のようなメリットを生み出すことが可能です。 ・業務フローの最適化によるコストの削減 ・商品の組み合わせ変更による売上の最大化 ・ ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "ビッグデータの種類や使い方を解説。クラウド時代 ... - NTTデータ関西",
+              "source": "https://www.nttdata-kansai.co.jp/media/017/",
+              "description": "イノベーションの加速と新規事業創出. ビッグデータは新たなビジネスチャンスを生み出します。顧客ニーズの深い理解や市場トレンドの予測によって、革新的な製品や ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "ビッグデータとは？ 定義や身近な例を簡単解説！ - Bizcrew Navi",
+              "source": "https://www.bizcrew.jp/article/11260024",
+              "description": "近年のDXの推進やAIなどの普及により、それに関連したビッグデータという言葉を目にしたり、耳にする機会が増えてきています。 ... AI、機械学習、クラウドサービスや、BI ...",
+              "reliability": 0.7
+            }
+          ],
+          "summary": "2024年のデータ・AI活用トレンドは、AIによる自動化やマルチモーダルAIの進化、大規模言語モデルの発展が挙げられます。生成AI市場は著しい成長が予測され、特に不動産業界ではAIの活用が業務効率化や新ビジネスチャンスの創出につながる見込みです。",
+          "relevanceScore": 0.5
+        },
+        {
+          "category": {
+            "id": "education",
+            "name": "教育・人材育成",
+            "description": "教育施設・人材育成空間の革新",
+            "keywords": [
+              "EdTech",
+              "教育施設",
+              "STEAM教育",
+              "リカレント教育"
+            ],
+            "focusAreas": [
+              "デジタル教育施設",
+              "イノベーションセンター",
+              "産学連携施設",
+              "スキルアップ施設"
+            ]
+          },
+          "trends": [
+            {
+              "title": "2024年度 教育研修費用の実態調査 - 産労総合研究所",
+              "source": "https://www.e-sanro.net/research/research_jinji/kyoiku/kyoikukenshu/pr2410.html",
+              "description": "（1）従業員1人あたりの教育研修費用は34,606円で、昨年度より2,194円の増加。 · （2）今後（1～3年）の教育研修費用総額を「増加」する見込みの企業は約6割。 · （3）2024年度に重点 ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "人材育成の重要性と最新トレンド：企業研修戦略とDX人材育成の ...",
+              "source": "https://www.rshd.co.jp/news/saiyou-jinzai-ikusei.html",
+              "description": "人材育成の手法には様々なものがありますが、一般的にOJT、Off-JT、自己啓発の3つが代表的と言われます。さらに近年はメンター制度や1on1ミーティング、eラーニングなども ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "2024年の企業研修トレンドと今後の展望。人事・研修担当者300名 ...",
+              "source": "https://biz.athuman.com/kenshu_media/1353",
+              "description": "本調査の結果、最も実施率が高かった研修は1位 コミュニケーション研修（62%）であり、次いで2位 伝え方研修（52%）、3位 リーダー研修（51%）という結果となりました。 この結果 ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "企業向け研修サービス市場に関する調査を実施（2024年）",
+              "source": "https://www.yano.co.jp/press-release/show/press_id/3596",
+              "marketSize": {
+                "unit": "億円",
+                "year": 2023,
+                "value": 600
+              },
+              "description": "2023年度の企業向け研修サービス市場は前年度比4.3％増の5,600億円、2024年度は同3.6％増の5,800億円を予測 ～人的資本経営に取り組む企業増加とリンクするかたちでプラス成 ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "「人材育成・能力開発」などの研修業界・研修事業のビジネス ...",
+              "source": "https://media.agent-bank.com/categories/market/ikusei",
+              "marketSize": {
+                "unit": "億円",
+                "year": 2021,
+                "value": 210
+              },
+              "description": "矢野経済研究所の調べでは、法人研修の市場規模は5,210億円（2021年度）。市場規模は業界全体としては5000億円前後に留まっており、非常に緩やかな拡大をしています。 研修は ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "2024年度 教育研修費用の実態調査 - 産労総合研究所",
+              "source": "https://www.e-sanro.net/research/research_jinji/kyoiku/kyoikukenshu/pr2410.html",
+              "description": "2023年度の従業員1人あたりの教育研修費用は34,606円すべての企業規模で前年より増加 · 今後の教育研修費用総額の見通しについては「増加」とする企業が約6割 · 2024年度に ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "EdTech（エドテック）とは？なぜ注目されているのかを解説",
+              "source": "https://coeteco.jp/articles/10904",
+              "description": "EdTech（エドテック）とは、教育現場にテクノロジーを取り入れ、さまざまなイノベーションを起こす動きやサービスのことです。学校現場のICT化が急速に推し進め ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "EdTech(エドテック)とは？具体例やメリット・デメリットを紹介",
+              "source": "https://business.ntt-east.co.jp/service/e-learning/column/column-48/index.html",
+              "description": "教育現場やオンライン学習プラットフォームなどで活用され、時間や場所を問わずに学びの場を提供することができます。EdTechは、教育格差の改善や学習効率の向上を実現する ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "EdTechとは？注目されている理由や市場規模、転職するポイントを ...",
+              "source": "https://fortna.co.jp/what-is-edtech/",
+              "description": "EdTechのサービスを活用すれば、より安価で学習サービスを受けることができ、地域や規模に影響されることなく一定の学習を促せます。その結果、学習できる機会が増加し、 ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "[PDF] 学校施設整備を取り巻く現状等 - 文部科学省",
+              "source": "https://www.mext.go.jp/content/20250221-mxt_sisetuki-000040564_3.pdf",
+              "description": "○ 令和3年度から令和5年度は「学びの保障・充実のための学習者用デジタル教科書実証事業」、令和6年度からは. 「学習者用デジタル教科書購入費」として、小学校5年生から ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "[PDF] 社会教育人材・施設について",
+              "source": "https://www.mhlw.go.jp/content/12000000/001309354.pdf",
+              "description": "○ 講習や養成課程で習得したコーディネート能力、ファシリテーション能力、プレゼンテーション能力等を活かし、教育委員会のみならず、. 福祉や防災、観光、まちづくり等の ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "令和6年度「各学校・課程・学科の垣根を超える高等学校改革推進 ...",
+              "source": "https://www.mext.go.jp/b_menu/boshu/mext_00056.html",
+              "description": "令和6年10月15日. 以下のとおり、令和6年度「各学校・課程・学科の垣根を超える高等学校改革推進事業（学びの機会の充実ネットワークの構築）」の公募を開始いたしました ...",
+              "reliability": 0.7
+            }
+          ],
+          "summary": "2024年度の教育研修費は従業員1人あたり34,606円で、市場は前年比増加予測。主要研修はコミュニケーション、伝え方、リーダーシップ。企業向け研修市場は成長傾向にあり、EdTechの利用が注目され、教育格差の解消や学習効率向上に貢献。ビジネス機会としては、EdTechを活用した企業研修サービスの提供や、効果的なコミュニケーション研修プログラムの開発が挙げられる。",
+          "relevanceScore": 0.5
+        },
+        {
+          "category": {
+            "id": "mobility",
+            "name": "モビリティ・交通",
+            "description": "新しい移動手段と不動産の融合",
+            "keywords": [
+              "モビリティハブ",
+              "EV充電",
+              "自動運転",
+              "MaaS"
+            ],
+            "focusAreas": [
+              "EV充電インフラ",
+              "モビリティステーション",
+              "空飛ぶクルマ",
+              "シェアモビリティ"
+            ]
+          },
+          "trends": [
+            {
+              "title": "モビリティの最新動向 - トレンド＆データ | 未来図（ミライズ）",
+              "source": "https://www.mirait-one.com/miraiz/whatsnew/trend-data_0032.html",
+              "description": "モビリティが注目される背景として、社会構造の変化があります。 日本では少子高齢化に伴い、高齢者の交通事故や公共交通機関廃止に伴う移動難民の発生が社会問題となっ ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "[PDF] 「モビリティDX戦略」 2025年のアップデート（案） - 経済産業省",
+              "source": "https://www.meti.go.jp/policy/mono_info_service/mono/automobile/jido_soko/pdf/018shiryo.pdf",
+              "description": "2024年10月にAD/ADAS向け最新SoC. 「Snapdragon Ride Elite」を発表。現行SoC. と比較すると約3倍の高速処理が可能。 • 「Mercedes-Benz」や中国の「Li Auto ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "モビリティDX戦略とは？日本の自動車産業が目指す未来",
+              "source": "https://tech.siliconstudio.co.jp/column/contents23/",
+              "description": "経済産業省は2024年5月に「モビリティDX戦略」を策定し、官民一体となって激化する国際競争を勝ち抜く姿勢を打ち出しました。 モビリティDX戦略は、デジタル技術を活用し ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "年平均成長率（CAGR）は34.3％で成長すると予測 - PressWalker",
+              "source": "https://presswalker.jp/press/83403",
+              "description": "世界のサービスとしてのモビリティ（MaaS）市場は、2022年の1,002.6億米ドルから2031年には14,249億米ドルにまで拡大すると予測されており、 2023年から2031年の間に年平均成長率（CAGR）34.3% という驚異的な成長が見込まれています。",
+              "reliability": 0.6
+            },
+            {
+              "title": "公共交通機関市場は変革期を迎え、スマートモビリティ ...",
+              "source": "https://newscast.jp/news/9723042",
+              "description": "公共交通機関市場は、2024年の2,808億7,182万米ドルから2033年には7,134億4,800万米ドルまで成長すると推定され、著しい拡大が見込まれている。この市場価値の急上昇 ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "サービスとしてのモビリティ[MAAS]市場規模、共有|成長、2032",
+              "source": "https://www.fortunebusinessinsights.com/jp/%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%A8%E3%81%97%E3%81%A6%E3%81%AE%E3%83%A2%E3%83%93%E3%83%AA%E3%83%86%E3%82%A3%EF%BC%88maas%EF%BC%89%E5%B8%82%E5%A0%B4-102066",
+              "description": "市場は2025年の532.76億米ドルから2032年までに1735.99億米ドルに成長すると予測されており、予測期間中は18.4％のCAGRを示しています。アジア太平洋地域は、2024年に40.6％ ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "[PDF] モビリティハブが都 - 公益社団法人 日本交通計画協会",
+              "source": "https://www.jtpa.or.jp/custom_contents/cms/linkfile/toshi_low_134.pdf",
+              "description": "令和6年度から、モビリティハブ整備を支援するため、. シェアモビリティの導入に必要なポートや精算機等の整備. に対する支援を都市・地域交通戦略推進事業及びまちなか.",
+              "reliability": 0.7
+            },
+            {
+              "title": "新たな交通の要「モビリティハブ」とは？ 移動の促進が地域を救う",
+              "source": "https://xtrend.nikkei.com/atcl/contents/18/00582/00035/",
+              "description": "民間においては、交通事業者のまちづくり政策として、自動車ディーラーやコンビニ、ガソリンスタンドなどの新しい価値や再編の手法として、全国各地で挑戦が続けられている ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "[PDF] 地域新MaaS事業の成果 （採択地域の成果報告書）",
+              "source": "https://www.meti.go.jp/shingikai/mono_info_service/smart_mobility_challenge/pdf/20250331_03.pdf",
+              "description": "「地域のハブ」には、路線バスの停留所やデマンド交通のミーティングポイントに加え、シェアサイクルや電動キックボード、さらには、自動運転マ. イクロモビリティ等、多種 ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "事業用EV充電器の導入メリット｜種類や設置・運用の流れも解説",
+              "source": "https://www.shindengen.co.jp/column/vol51/",
+              "description": "事業用EV充電器の運用イメージ ; 来客向けEV充電サービスとして. ホテル・商業施設・マンションなどで、ユーザーにEV充電の機会を設け、来客または入居者増につなげる ; 一般 ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "EV充電ステーションビジネスで儲ける7つの方法 - BESEN Group",
+              "source": "https://www.besen-group.com/ja/best-7-ways-to-make-money-from-ev-charging-station-business/",
+              "description": "EV 充電ステーションには、直接充電料金、小売店への来店客数の増加、パートナーシップの形成、広告機会の活用など、さまざまな収益源があります。企業は政府の補助金の ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "電気自動車（EV）充電市場の見通し - Strategyand.pwc.com",
+              "source": "https://www.strategyand.pwc.com/jp/ja/publications/report/ev-charging-market-outlook.html",
+              "description": "主要な収益プール ... EV充電のバリューチェーンには、充電ポイント用ハードウェアや追加の付加価値サービスなど、主に6つの収益プールがあります。",
+              "reliability": 0.7
+            }
+          ],
+          "summary": "社会構造の変化やデジタル化の推進により、モビリティ業界は変革期を迎えており、MaaSやスマートモビリティ、EV充電インフラなどが急成長を遂げています。これらのトレンドを踏まえ、高齢者向けの安全な交通手段の提供、デジタル技術を活用したモビリティサービスの開発、またEV充電ステーションの設置と運営を含む新しいビジネス機会が見込まれます。",
+          "relevanceScore": 0.5
+        },
+        {
+          "category": {
+            "id": "entertainment",
+            "name": "エンターテイメント・体験",
+            "description": "エンタメ・体験型施設の新展開",
+            "keywords": [
+              "エンターテイメント施設",
+              "テーマパーク",
+              "eスポーツ",
+              "イマーシブ体験"
+            ],
+            "focusAreas": [
+              "VR/AR施設",
+              "eスポーツアリーナ",
+              "イマーシブシアター",
+              "デジタルアート"
+            ]
+          },
+          "trends": [
+            {
+              "title": "「イマーシブ体験」が注目される理由とは？トレンドの背景と事例 ...",
+              "source": "https://www.beeats.co.jp/retailvoice/trend/immersive/",
+              "description": "「イマーシブ体験」 は消費者にとって新しい体験というだけでなく、企業にとってもブランドや商品の魅力を伝える新しい手段として注目されています。",
+              "reliability": 0.7
+            },
+            {
+              "title": "「イマーシブ・フォート東京」徹底紹介。2万円超の豪華すぎる最新 ...",
+              "source": "https://rurubu.jp/andmore/article/20310",
+              "description": "2万円超の豪華すぎる最新作「真夜中の晩餐会 Secret of Gilbert's Castle」を編集部が体験 2024年3月にオープンした東京・お台場のライブ・エンターテイメント施設「イマ ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "没入型技術革新と体験型施設に対する消費者の需要に後押しされ ...",
+              "source": "https://newscast.jp/news/5904157",
+              "description": "特に、arやVR技術は、ロケーションベースの体験の開発において重要な要素になりつつあります。",
+              "reliability": 0.49999999999999994
+            },
+            {
+              "title": "[PDF] 第1回エンタメ・クリエイティブ産業政策研究会 （事務局資料）",
+              "source": "https://www.meti.go.jp/shingikai/mono_info_service/entertainment_creative/pdf/001_04_00.pdf",
+              "description": "日本のコンテンツ市場規模は第3位だが、2011年～2021年の平均成長率は2％。 • 国内の他産業と比較すると高い成長率だが、海外にはより高い成長率の市場も存在。",
+              "reliability": 0.7
+            },
+            {
+              "title": "没入型技術革新と体験型施設に対する消費者の需要に後押しされ ...",
+              "source": "https://newscast.jp/news/5904157",
+              "description": "ロケーションベース エンターテインメント市場は急成長を遂げており、市場規模は2024年の56億5,000万米ドルから2033年には推定970億米ドルに拡大すると予測されている ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "エンタメ業界の市場規模とは？ 日本と世界の市場成長率・今後の ...",
+              "source": "https://entamecareer.com/archives/171",
+              "marketSize": {
+                "unit": "兆円",
+                "year": 2023,
+                "value": 360
+              },
+              "description": "2023年時点で、世界のエンタメ業界全体の市場規模は約2.4兆ドル（約360兆円）に達しており、今後も年平均成長率（CAGR）約5％で拡大すると予測されています。 特に、デジタルコ ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "エンターテイメント業界の業界研究｜現状と今後の課題や志望動機 ...",
+              "source": "https://offerbox.jp/columns/30817.html",
+              "description": "レジャー・アミューズメント事業は、テーマパークや遊園地、動物園、水族館、ゲームセンター、パチンコホールなどの運営を通じて娯楽を提供する事業です。主に、自宅 ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "エンタメ業界の仕事はどんなものがある？代表的な業種内容と仕事 ...",
+              "source": "https://avex.jp/liver-tankentai/%E6%9C%AA%E5%88%86%E9%A1%9E/what-entertainment-work",
+              "description": "レジャー・アミューズメント事業は、エンターテイメントと観光の融合をはかり、より多くの人に楽しい体験を提供し続けるための革新を続ける事業といえます。 おもちゃ ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "テーマパーク業界の現状と今後の動向は？将来性や就職活動の ...",
+              "source": "https://careerticket.jp/media/article/1698/",
+              "description": "テーマパーク業界に関心がある就活生に向けて、この記事では、業界の現状や今後の動向を解説します。コロナ禍で一時は落ち込んだ市場も、2022年以降は回復傾向です。",
+              "reliability": 0.7
+            },
+            {
+              "title": "日本 のテーマパ ークにおけ る事業成立要 因 - J-Stage",
+              "source": "https://www.jstage.jst.go.jp/article/jmda1969/26/0/26_0_147/_pdf/-char/ja",
+              "description": "本稿で提起してきたテーマパークの事業成立要因は,人,モ. ノ,そ して物流システムを. ネットワーク化した,高 度な事業ノウハウを必要 とするテーマパーク事業の経営診断 ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "テーマパーク業界の現状と今後の動向は？将来性や就職活動の ...",
+              "source": "https://careerticket.jp/media/article/1698/",
+              "description": "訪日外国人の増加は、テーマパーク業界にとって大きな機会になります。インバウンドとは、外国人が日本へ旅行に訪れることを意味する、旅行業界や観光業界などでよく使 ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "テーマパークの市場規模、シェア、トレンド|成長分析[2032]",
+              "source": "https://www.fortunebusinessinsights.com/jp/%E3%83%86%E3%83%BC%E3%83%9E%E3%83%91%E3%83%BC%E3%82%AF%E3%83%9E%E3%83%BC%E3%82%B1%E3%83%83%E3%83%88-110644",
+              "description": "グローバルテーマパークの市場規模は、2032年までに2024年の5590億ドルから2032年までに12471億ドルに成長すると予測されています。",
+              "reliability": 0.7
+            }
+          ],
+          "summary": "イマーシブ体験と技術革新がエンターテインメント産業を牽引し、特にARやVR技術の利用が増加。消費者の需要拡大により、ロケーションベースエンターテインメント市場は2033年に970億ドルに達する見込み。日本のテーマパーク業界も外国人観光客増加で拡大が期待され、全体の市場規模は2032年に12471億ドルへ成長予測。ビジネス機会は、没入型体験技術の開発と国際観光の促進にあり。",
+          "relevanceScore": 0.5
+        },
+        {
+          "category": {
+            "id": "workspace",
+            "name": "ワークスペース革新",
+            "description": "新しい働き方に対応したオフィス空間",
+            "keywords": [
+              "フレキシブルオフィス",
+              "コワーキング",
+              "ハイブリッドワーク",
+              "スマートオフィス"
+            ],
+            "focusAreas": [
+              "ABW（Activity Based Working）",
+              "サテライトオフィス",
+              "バーチャルオフィス",
+              "ウェルビーイングオフィス"
+            ]
+          },
+          "trends": [
+            {
+              "title": "日本におけるデジタル・ワークプレース・イノベーションのハイプ ...",
+              "source": "https://www.gartner.co.jp/ja/newsroom/press-releases/pr-20240821-dwihc",
+              "description": "Gartnerは、 「日本におけるデジタル・ワークプレース・イノベーションのハイプ・サイクル：2024年」を発表しました。",
+              "reliability": 0.7
+            },
+            {
+              "title": "仕事の未来を創る世界都市：シンガポール、ロンドン、東京",
+              "source": "https://soken.xymax.co.jp/2025/05/13/2505-trend_report_q1_2025/",
+              "description": "最先端のオフィススペースやモビリティイノベーションハブ、緑地を備え、スマートな都市環境におけるシームレスなワークライフインテグレーションを推進する。",
+              "reliability": 0.7
+            },
+            {
+              "title": "2025年、そしてその先のコワーキングとは？ | CIC",
+              "source": "https://cic.com/ja/blog/2025%E5%B9%B4%E3%80%81%E3%81%9D%E3%81%97%E3%81%A6%E3%81%9D%E3%81%AE%E5%85%88%E3%81%AE%E3%82%B3%E3%83%AF%E3%83%BC%E3%82%AD%E3%83%B3%E3%82%B0%E3%81%A8%E3%81%AF%EF%BC%9F/",
+              "description": "リモートワークが可能な仕事をする従業員の半数以上が、2024年にはハイブリッド環境での仕事を好み、またそれを期待しており、2019年の32%から上昇し、2025年まで上昇し続 ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "コワーキングスペース市場の成長、2033年までのトレンド分析 ...",
+              "source": "https://www.globalgrowthinsights.com/jp/market-reports/coworking-space-market-110854",
+              "description": "2025年のコワーキングスペース市場規模は7517.64 mと推定されており、3.5％のCAGRで2033年までに9899.29 mに成長する予測があります。",
+              "reliability": 0.7
+            },
+            {
+              "title": "統合職場管理システム市場は2030年までに114億米ドルを超え",
+              "source": "https://presswalker.jp/press/83695",
+              "description": "統合職場管理システム市場は2030年までに114億米ドルを超え、年平均成長率（CAGR）12.8％で成長すると予測されています：戦略的洞察と成長予測. Panorama Data Insights Ltd.",
+              "reliability": 0.7
+            },
+            {
+              "title": "スマートスペース市場規模、シェア、成長|予測[2032]",
+              "source": "https://www.fortunebusinessinsights.com/jp/%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%E3%82%B9%E3%83%9A%E3%83%BC%E3%82%B9%E3%83%9E%E3%83%BC%E3%82%B1%E3%83%83%E3%83%88-109726",
+              "description": "世界のスマートスペース市場規模は2024年に1511億ドルと評価され、2025年には170億7000万ドルの価値があり、2032年までに372億3300万ドルに達すると予測されています。",
+              "reliability": 0.7
+            },
+            {
+              "title": "フレキシブルオフィスとは？ | clasy",
+              "source": "https://www.clasy.co.jp/%E3%82%B3%E3%83%9F%E3%83%83%E3%83%88%E3%83%A1%E3%83%B3%E3%83%88",
+              "description": "経済活性化、人材育成、投資拡大を目的として、国からの支援を受けて中小機構が設置するスタートアップ支援向けの施設です。 ②フリーアドレスのデスクスペースや会議室など.",
+              "reliability": 0.7
+            },
+            {
+              "title": "フレキシブルオフィスとは？事務所の種類やメリット・デメリット ...",
+              "source": "https://www.tenpoup.co.jp/blog/entry-597124/",
+              "description": "フレキシブルオフィスは法人だけでなく、個人契約にも対応しているケースが多いです。 フリーランスや個人事業主の方にも利用しやすく、より幅広い働き方をサポートします ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "フレキシブルオフィスとは？多様な働き方に対応できる新しい ... - JLL",
+              "source": "https://www.jll.com/ja-jp/insights/what-is-a-flexible-office-that-supports-a-variety-of-work-styles",
+              "description": "本稿ではコアオフィスと在宅勤務の欠点を解消する「第3の働く場」であるフレキシブルオフィスの基本的な概念や導入メリット、注目される理由、利用形態について解説する。",
+              "reliability": 0.7
+            },
+            {
+              "title": "コワーキングスペース開業への完全ガイド！成功の秘訣と注意点を ...",
+              "source": "https://e-office.space/news/1n6qsmr7y",
+              "description": "コワーキングスペース開業を完全ガイド！市場動向から資金調達、集客、運営の秘訣、無人化による高収益化、1人用個室の需要まで徹底解説。成功へのステップと注意点を ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "コワーキングスペースの賢い活用法とは？シェアオフィス ... - JLL",
+              "source": "https://www.jll.com/ja-jp/insights/how-to-use-coworking-space",
+              "description": "コワーキングスペースは、柔軟な契約形態と豊富な設備を備え、ビジネスの可能性を広げるための優れた選択肢である。特に、自宅では難しい集中力の維持や、異業種交流を通じ ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "コワーキングスペースとは？主な設備や4つのチェックポイントも解説",
+              "source": "https://bizcomfort.jp/contents/164460.html",
+              "description": "コワーキングスペースとは、フリーランスや起業家、リモートワーカーなど、さまざまな人が集まって働くシェアオフィスのことです。 自宅やカフェでは集中力が続か ...",
+              "reliability": 0.7
+            }
+          ],
+          "summary": "日本を含む世界各国で、デジタル化とハイブリッドワークの推進により、コワーキングスペースやフレキシブルオフィスの需要が増加しています。2024年以降、リモートワークを好む従業員が増え、統合職場管理システム市場やスマートスペース市場の成長が予測されており、新しい働き方をサポートする施設やサービス提供にビジネス機会があります。",
+          "relevanceScore": 0.5
+        },
+        {
+          "category": {
+            "id": "logistics",
+            "name": "物流・ロジスティクス",
+            "description": "物流施設の高度化・自動化",
+            "keywords": [
+              "物流不動産",
+              "ロジスティクス4.0",
+              "自動倉庫",
+              "ラストワンマイル"
+            ],
+            "focusAreas": [
+              "自動化倉庫",
+              "コールドチェーン",
+              "ドローン配送",
+              "マルチテナント型物流"
+            ]
+          },
+          "trends": [
+            {
+              "title": "物流2024年問題の解決策 ～企業の壁を打ち破る - NTT Data",
+              "source": "https://www.nttdata.com/jp/ja/trends/data-insight/2024/0808/",
+              "description": "トラックドライバーの需給予測では、2024年時点で14万人が不足するとされるが、ドライバーの高齢化も伴い、2030年には約34万人のドライバーが不足すると考えられている。",
+              "reliability": 0.7
+            },
+            {
+              "title": "物流業界の未来を徹底予測：2024年以降のトレンドと課題とは",
+              "source": "https://ainavi.jp/portal/industory/thorough-prediction-of-the-future-of-the-logistics-industry-what-are-the-trends-and-challenges-after-2024/",
+              "description": "本記事では、最新のデータと具体的な事例を基に、2024年以降の物流業界の展望と課題について詳しく解説します。",
+              "reliability": 0.7
+            },
+            {
+              "title": "2024年版 次世代物流ビジネス・システムの実態と将来展望 - 富士経済",
+              "source": "https://www.fuji-keizai.co.jp/report/detail.html?code=162404818&la=ja",
+              "description": "物流業界では2024年問題によるトラックドライバー不足などの労働力不足や属人化からの脱却を背景に、ロボットの活用による自動化、AI、IoT技術を活用したデジタル化 ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "日本の貨物・ロジスティクス市場規模・シェア分析 -産業調査レポート",
+              "source": "https://www.mordorintelligence.com/ja/industry-reports/japan-freight-logistics",
+              "description": "日本の貨物・物流市場規模は2025年に3,358億米ドルと推定され、2030年には4,067億米ドルに達すると予測され、 予測期間中（2025-2030年）の年平均成長率は3.90% である。",
+              "reliability": 0.6
+            },
+            {
+              "title": "グローバル物流市場は2025年から2033年の間に年率4.02%で成長し",
+              "source": "https://www.imarcgroup.com/pressrelease/ja/logistics-market-statistics",
+              "description": "2024年の世界の物流市場規模は5.7兆米ドルと評価され、2033年までに8.1兆米ドルに達すると予測されており、2025年から2033年までの年間平均成長率（CAGR）は4.02%です。",
+              "reliability": 0.7
+            },
+            {
+              "title": "日本の物流市場、33年に87兆円規模。IMARC予測、年平均5.6%成長",
+              "source": "https://www.jmd.co.jp/article.php?no=302191",
+              "marketSize": {
+                "unit": "億円",
+                "year": 2033,
+                "value": 8000
+              },
+              "description": "印調査会社IMARCは8日、日本の物流の市場規模は2033年までに5490億ドル（約86兆8000億円）となり、25―33年の年平均成長率は5・6%になるとの予測を発表した。",
+              "reliability": 0.7
+            },
+            {
+              "title": "[PDF] 物流不動産における取り組みについて",
+              "source": "https://www.mlit.go.jp/seisakutokatsu/freight/content/001851410.pdf",
+              "description": "不動産協会物流事業委員会 活動方針. 物流不動産の取り組み. 1. Page 3. 持続可能な ... 機会を創出. 14. 保育所の設置. カフェテリア・コンビニの開放. 社会科見学・交通 ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "CBRE、米国物流施設開発への投資プログラム「US Industrial ...",
+              "source": "https://www.cbre.co.jp/press-releases/cbre-establishes-us-industrial-venture-logistics-facilities-investment-program",
+              "description": "本プログラムを通じて、日系パートナーは、米国の成長著しい物流不動産市場に参入し、安定的な収益を得る機会を得ることができます。 第1号ファンドの投資対象は、米国 ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "日鉄興和不動産 海外第2弾の物流施設開発事業への参画 ～米国 ...",
+              "source": "https://www.nskre.co.jp/company/news/2025/20250610.html",
+              "description": "2024年9月末に竣工した三井不動産株式会社との共同事業『MFLP・LOGIFRONT東京板橋』の実績も踏まえ、今後はさまざまな企業ニーズに応えながら、物流施設開発にとどまらず、 ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "ロジスティクス4.0とは？未来の物流を変革する技術革新と実践戦略",
+              "source": "https://miraicolabo.willsmart.co.jp/article/8610/",
+              "description": "ロジスティクス4.0への移行は、企業にとって物流戦略を根本から見直す絶好の機会です。しかし、一度にすべての技術を導入することは現実的ではありません。成功のため ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "ロジスティクスとは-分かりやすく簡単に解説！「物流 ...",
+              "source": "https://www.jitbox.co.jp/column/id-029/",
+              "description": "現代ビジネスにおいて、企業の競争力を高める上で欠かせないのがロジスティクスです。単なる「モノの運び方」に留まらず、調達から生産、販売、そして顧客への配送 ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "3PLの現状｜市場が拡大する背景と導入するメリットを解説",
+              "source": "https://www.siscloud.jp/column/3pl-basic/page/three.html",
+              "description": "ロジスティクス4.0とは、ロボット、AI、IoTなどの先進技術を活用し、物流プロセス全体を最適化する取り組みです。これらの進展により、3PL事業者はより効率的でコスト効果 ...",
+              "reliability": 0.7
+            }
+          ],
+          "summary": "2024年にはトラックドライバー不足と予測される中、物流業界はロボット、AI、IoTを駆使したデジタル化と自動化へ移行し、物流不動産への投資やロジスティクス4.0の採用で対応しています。これにより、物流市場は年間平均4%以上の成長が見込まれ、ビジネス機会が拡大しています。",
+          "relevanceScore": 0.5
+        },
+        {
+          "category": {
+            "id": "retailtech",
+            "name": "リテールテック",
+            "description": "小売・商業施設のデジタル化",
+            "keywords": [
+              "リテールテック",
+              "OMO",
+              "体験型商業施設",
+              "スマートストア"
+            ],
+            "focusAreas": [
+              "無人店舗",
+              "体験型施設",
+              "デジタルサイネージ",
+              "ECと実店舗融合"
+            ]
+          },
+          "trends": [
+            {
+              "title": "リテールテック最先端 2024年の「5大トレンド」 - ITmedia",
+              "source": "https://www.itmedia.co.jp/business/subtop/retailtrends/",
+              "description": "ECのレコメンド機能、商品訴求だけでは不十分 購入につなげる「他の要素」とは · がっかりしないDX 小売業の新時代： · 待ち時間の解消だけではない、レジなし ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "小売／流通（リテール）テックの現状と今後 - トレンド＆データ",
+              "source": "https://www.mirait-one.com/miraiz/whatsnew/trend-data_0028.html",
+              "description": "リテールテックとは、「リテール（小売）」と「テック（技術）」を組み合わせた造語で、小売業界におけるデジタル技術の活用を指します。AIやIoTをはじめとしたITの発展 ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "リテールテックJAPAN| 小売・流通業をデジタルで変革する",
+              "source": "https://messe.nikkei.co.jp/rt/",
+              "description": "流通業のサプライチェーンとマーケティングを進化させる、最新のIT機器・システムを紹介する日本最大の専門展。",
+              "reliability": 0.7
+            },
+            {
+              "title": "リテールメディアが急成長している理由 TECHBLITZが選ぶ ...",
+              "source": "https://techblitz.com/tech-trend/retail-media-startups/",
+              "marketSize": {
+                "unit": "億円",
+                "year": 2023,
+                "value": 3625
+              },
+              "description": "しかし、日本においても市場は着実に成長しており、2023年には前年比21.5%増の3625億円に達し、2027年には2023年の約2.6倍となる9332億円にまで拡大すると予測されている。",
+              "reliability": 0.7
+            },
+            {
+              "title": "「osina」を運営するリテールテックカンパニーNELが累計約7.5億円 ...",
+              "source": "https://www.nel-all.com/news/165/",
+              "marketSize": {
+                "unit": "兆円",
+                "value": 150
+              },
+              "description": "昨対比205%で会社成長（※1）。「osina」はサービス開始1年2ヶ月で昨年対比1,000%以上再生数が増加（※2）。営業、エンジニア組織拡大のため積極採用へ。 150兆円の小売市場 ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "リテールテックカンパニーNEL、シリーズBで6.5億円を調達 売上 ...",
+              "source": "https://tsuhan-ec.jp/article/2024/11/19/916.html",
+              "description": "市場動向を踏まえ、NELはオンラインとオフラインの垣根を越えた、新たな仕組みとソリューションを提案。 同社の事業全体における売上成長率は、前年比205%を記録しました。",
+              "reliability": 0.7
+            },
+            {
+              "title": "リテールテックとは？小売企業の課題を解決した事例や成功の ...",
+              "source": "https://biz.kddi.com/content/column/smartwork/what-is-retail-tech/",
+              "description": "リテールテックとは、小売企業がIT技術を活用して経営課題を解決する取り組みを指し、小売業を意味する「Retail」と、技術を意味する「Technology」を組み合わせた造語です ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "リテールテック事業 | 事業紹介 - forest株式会社",
+              "source": "https://forest-inc.jp/contact/retail_tech",
+              "description": "SNS・チャネル診断 ブランドマーケティング. ECモール企画・運用支援. OMO包括支援 伴走型新規事業開発. AI導入・マーケティング人材育成 マーケティングKPI可視化",
+              "reliability": 0.7
+            },
+            {
+              "title": "小売／流通（リテール）テックの現状と今後 - トレンド＆データ",
+              "source": "https://www.mirait-one.com/miraiz/whatsnew/trend-data_0028.html",
+              "description": "リテールテックとは、「リテール（小売）」と「テック（技術）」を組み合わせた造語で、小売業界におけるデジタル技術の活用を指します。AIやIoTをはじめとしたITの発展 ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "OMOとは？成功事例や、O2O・オムニチャネルとの違いを解説",
+              "source": "https://www.sbpayment.jp/support/ec/omo/",
+              "description": "OMOには、オンラインとオフラインの連携を活かした施策を実施し、販売の機会損失を低減できるというメリットがあります。 例えば、OMOに対応すれば、お客さまの購入前後の ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "OMOとは？オンラインとオフラインを融合する最新マーケティング ...",
+              "source": "https://www.ecbeing.net/contents/detail/181",
+              "description": "オムニチャネルの大きな特徴は、お店側が「どうやったらお客様とたくさんの場所で接点を持てるか」という視点で進め、販売機会を最大化することが戦略・目的だということ ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "【成功事例あり】OMO戦略とは？メリットや導入の流れなども解説",
+              "source": "https://www.salesforce.com/jp/blog/jp-what-is-omo-strategy/",
+              "description": "OMO戦略を取り入れてオンラインとオフラインを融合することにより、企業は以下のメリットを得られます。 顧客ニーズの把握に役立つ; 機会損失を防げる; 顧客体験の質を上げ ...",
+              "reliability": 0.7
+            }
+          ],
+          "summary": "リテールテックの2024年のトレンドは、ECのレコメンド機能強化、DXの進化、レジなしシステム、リテールメディアの成長、オンラインとオフラインの融合（OMO戦略）などが挙げられる。デジタル技術の活用で顧客体験を向上させ、小売・流通業の変革を促すビジネス機会が拡大している。",
+          "relevanceScore": 0.5
+        },
+        {
+          "category": {
+            "id": "healthtech",
+            "name": "ヘルスケア・ウェルネス",
+            "description": "健康・ウェルビーイング重視の不動産",
+            "keywords": [
+              "ウェルネス不動産",
+              "ヘルスケア施設",
+              "WELL認証",
+              "バイオフィリックデザイン"
+            ],
+            "focusAreas": [
+              "健康経営オフィス",
+              "メディカルモール",
+              "シニアリビング",
+              "フィットネス施設"
+            ]
+          },
+          "trends": [
+            {
+              "title": "日本の健康・ウェルネス市場規模、シェア、成長見通し 2025～2033",
+              "source": "https://newscast.jp/news/2194139",
+              "description": "日本の健康とウェルネス市場規模は、2024年に2,072.8億米ドルに達しました。 今後、IMARCグループは、市場規模が2033年までに2,8750億米ドルに達し、2025年から2033年にか ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "「健康になりたい」は世界共通！ ウェルネス市場が示す未来の ...",
+              "source": "https://column.cosfa.co.jp/wellness/6947/",
+              "marketSize": {
+                "unit": "兆円",
+                "year": 2021,
+                "value": 220
+              },
+              "description": "世界のウェルネス市場は、2021年の1.5兆ドル（約220兆円）以上から、2024年には1.8兆ドル（約260兆円）に達すると見込まれており、毎年5〜10%のペースで成長しています。",
+              "reliability": 0.7
+            },
+            {
+              "title": "調査レポート「ウェルネスツーリズム2024」を発表 - トラベルボイス",
+              "source": "https://www.travelvoice.jp/20240826-156170",
+              "description": "コロナ禍を経て健康を意識したライフスタイルが一般にも浸透するとともに、旅行も睡眠、アクティビティ、食事、コミュニティ体験などのウェルネス要素を組み込んだ選択肢が ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "ヘルスケアとウェルネス市場の予測：2032年までに15.00％の成長率 ...",
+              "source": "https://pando.life/article/1891728",
+              "description": "ヘルスケアとウェルネス 市場は、 2025 年から 2032 年にかけて 15.00%% の CAGR で成長すると予想されます 。 この詳細な ヘルスケアとウェルネス 市場調査レポートは、192 ページにわたります。",
+              "reliability": 0.6
+            },
+            {
+              "title": "日本の健康・ウェルネス市場規模、シェア、成長見通し 2025～2033",
+              "source": "https://newscast.jp/news/2194139",
+              "description": "2033年の市場予測：2,8750億ドル市場成長率:3.51%（2025～2033年）. 日本の健康とウェルネス市場規模は、2024年に2,072.8億米ドルに達しました。今後、IMARCグループは、市場 ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "日本のヘルス&ウェルネス市場規模、成長、動向、予測(2025年",
+              "source": "https://newscast.jp/news/1037160",
+              "description": "日本のヘルス&ウェルネス市場規模は、2024年に2,072億8,000万米ドルに達しました。今後、IMARCグループは、2025年から2033年の間に3.51%の成長率(CAGR)を示し、2033年まで ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "ウェルネス経営への取組み | 野村不動産株式会社",
+              "source": "https://www.nomura-re.co.jp/corporate/health/",
+              "description": "社員同士のつながりの場として野球やサッカー、ランニング、eスポーツなどの様々な同好会活動を会社が支援しています。 （4）. 課や部門の垣根をこえたコミュニケーション、 ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "不動産デベロッパーの新規事業としてのヘルスケア領域への参入を ...",
+              "source": "https://note.com/demo_lab/n/nb804f338271a",
+              "description": "不動産デベロッパーがヘルスケア領域に新規参入することは、社会的要請に応えるだけでなく、持続的な事業成長を実現するための重要な戦略である。従来の不動産開発 ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "[PDF] CASBEE-ウェルネス不動産 2025 年版 評価マニュアル（試行版）",
+              "source": "https://www.jsbc.or.jp/research-study/casbee/tools/files/cas_MP/CASBEE-MP_2025Seat_ver1_20250313.pdf",
+              "description": "CASBEE-不動産では、2016 年版より区分所有建物への投資を積極的に行うファンド・REIT や、建物低層部. 分の店舗で環境配慮の取組みを行う事業者等のニーズに対応するため ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "[PDF] 新しい健康社会の実現に資する 経済産業省における施策について",
+              "source": "https://www.meti.go.jp/shingikai/mono_info_service/kenko_iryo/pdf/006_03_00.pdf",
+              "description": "普及事業として、介護両立支援に関する企業同士（特に経営層）のナレッジを提供する機会となるような事例共. 有等を行うセミナーや経営層コミットメントの重要性を発信する。",
+              "reliability": 0.7
+            },
+            {
+              "title": "サッポロ・ヘルスケアビジネス・サポートプログラム2025 - 札幌市",
+              "source": "https://www.city.sapporo.jp/keizai/healthcare/support2025.html",
+              "description": "（3）ビジネス機会拡大等支援 ... 協業や販路拡大等につながるよう、関係機関や他の採択者等との情報交換など、事業拡大に向けたネットワークづくりを支援します。",
+              "reliability": 0.7
+            },
+            {
+              "title": "ヘルスケア施設のさらなる価値向上へ、4法人が介護DXによる生産 ...",
+              "source": "https://www.as-partners.co.jp/information/information-2056/",
+              "description": "アズパートナーズは、「介護DXサポート」として、介護事業所の生産性向上に加え、サービスの質向上を実現すべく、現場で「オペレーターのためのオペレーターによる ...",
+              "reliability": 0.7
+            }
+          ],
+          "summary": "日本および世界のヘルスケア・ウェルネス市場は、今後数年間で顕著な成長が見込まれており、2025年から2033年にかけて年間約3.51%の成長率が予済されています。特に、ウェルネスツーリズムやヘルスケア施設のデジタル化、企業によるウェルネス経営の取り組みが注目されています。これらのトレンドは、新規事業機会やサービスの質向上、ビジネス拡大の可能性を示しています。",
+          "relevanceScore": 0.5
+        },
+        {
+          "category": {
+            "id": "sustainability",
+            "name": "サステナビリティ",
+            "description": "環境配慮型不動産・グリーンビルディング",
+            "keywords": [
+              "グリーンビルディング",
+              "カーボンニュートラル",
+              "ESG不動産",
+              "LEED認証"
+            ],
+            "focusAreas": [
+              "脱炭素建築",
+              "再生可能エネルギー",
+              "サーキュラーエコノミー",
+              "グリーンファイナンス"
+            ]
+          },
+          "trends": [
+            {
+              "title": "2024年SDGs・サステナビリティ関連のトレンドキーワード ... - coki",
+              "source": "https://coki.jp/sustainable/esg/43988/",
+              "description": "SDGsのトレンドキーワードでは、1位は、「達成」ということでこれはよく理由はわからない。2位は「FRaU」というのも、おしゃれな媒体としてSDGsの取り組みを取り上げまくっ ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "今話題のマーケティングトレンドワード5：2024年8月",
+              "source": "https://transformation-showcase.com/articles/574/",
+              "description": "ビジネスやマーケティングで話題になっている、トレンドワードをご紹介。今回は、持続可能性に関連した「クライメート・ポジティブ」「陸上養殖」、既存の仕組みや設備 ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "サステナビリティに関する意識と消費者行動2024（2）",
+              "source": "https://www.nli-research.co.jp/report/detail/id=81401?site=nli",
+              "description": "また、昨年2023年との比較では、サステナビリティへの「自分ごと意識」が高まっているが、その一方で、サステナビリティ行動を抑制する「障壁意識」も増加している様子が ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "世界のファンドによるサステナブル業界への投資事例をチェック",
+              "source": "https://mygreengrowers.com/blog/sustainable-funds/",
+              "description": "＜世界的な投資トレンドと市場規模の変化＞  近年、サステナブル投資は急速に成長しています。 2022年における世界のサステナブル・ファイナンス市場の売上高は約4,838億米ドルであり、2031年には2兆2,485億米ドルに達すると予測されています。 これは、 年平均成長率20.1% に相当します。",
+              "reliability": 0.6
+            },
+            {
+              "title": "2025年 国内サステナビリティ／ESGサービス 市場予測を発表 - IDC",
+              "source": "https://my.idc.com/getdoc.jsp?containerId=prJPJ53414125",
+              "marketSize": {
+                "unit": "億円",
+                "year": 2029,
+                "value": 962
+              },
+              "description": "2029年は4,962億円になり、2024年～2029年の年間平均成長率（CAGR：Compound Annual Growth Rate）は16.0％になると予測しています。",
+              "reliability": 0.7
+            },
+            {
+              "title": "日本のグリーンテクノロジーとサステナビリティ市場規模は2033年 ...",
+              "source": "https://newscast.jp/news/0316457",
+              "description": "日本のグリーンテクノロジーと持続可能性市場は2024年に53億米ドルに達し、2033年までに400億米ドルに成長する見込み。年平均成長率は25.2%。主な成長要因:- 政府 ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "[PDF] グリーンインフラの事業・投資のすゝめ - 国土交通省",
+              "source": "https://www.mlit.go.jp/report/press/content/001762359.pdf",
+              "description": "アメリカ発のグリーンビルディング認証制度。建物の環境負荷低減と利用者の快適性の観点から建物の環境性能を評価する. 建物の新築/既存、対象(建築物/テナント/街区) ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "DBJ Green Building認証｜金融サービス - 日本政策投資銀行（DBJ）",
+              "source": "https://www.dbj.jp/service/program/g_building/",
+              "description": "DBJ Green Building認証とは、「環境・社会への配慮」がなされた不動産とその不動産を所有・運営する事業者を支援する取り組みとして2011年に創設された認証制度です。",
+              "reliability": 0.7
+            },
+            {
+              "title": "ベトナムのグリーンビルディング：現状と成長の可能性 - B-Company",
+              "source": "https://b-company.jp/ja/green-buildings-in-vietnam-current-situation-and-growth-potential/",
+              "description": "日本企業の市場参入機会. ベトナムのグリーンビルディング市場は特に工業団地や倉庫において日本企業にとって大きなビジネスチャンスを提供している。政府の税制優遇 ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "企業がカーボンニュートラルに取り組むメリットとは？ ｜ ReChroma",
+              "source": "https://rechroma.co.jp/column/netzero/benefits",
+              "description": "新たなビジネスチャンス獲得. カーボンニュートラル実現に向けて取り組むことで、新たなビジネスチャンスを獲得できる可能性が高いです。 現代では、深刻化する地球環境 ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "中小企業の脱炭素化投資を後押し！カーボンニュートラル投資促進 ...",
+              "source": "https://www.enecho.meti.go.jp/about/special/johoteikyo/carbon_neutral_zeisei_01.html",
+              "description": "今回は、企業の脱炭素化と付加価値向上を両立する設備の導入を後押しするため2024年4月に拡充された「カーボンニュートラル投資促進税制」についてご紹介します。 中小企業 ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "カーボンニュートラルに向けた協創事例6選 - サステナビリティ ハブ",
+              "source": "https://www.sustainability-hub.jp/column/carbon-neutral-collaboration-cases/",
+              "description": "この章では、カーボンニュートラルの実現に向けて、企業ができる具体的な取り組みを2つご紹介します。 サプライチェーン全体でのエネルギー起源CO₂排出量削減. 1つ目は、 ...",
+              "reliability": 0.7
+            }
+          ],
+          "summary": "2024年のサステナビリティトレンドは、「達成」や「FRaU」などのキーワードが注目され、持続可能性への自己関与意識が高まっている一方で障壁意識も増えています。サステナブル投資は急増し、グリーンテクノロジーやビルディング市場が成長中で、特に脱炭素化やカーボンニュートラルに関する取り組みが新たなビジネスチャンスを生んでいます。",
+          "relevanceScore": 0.5
+        },
+        {
+          "category": {
+            "id": "fintech",
+            "name": "FinTech（金融テック）",
+            "description": "不動産金融・投資のデジタル化",
+            "keywords": [
+              "不動産FinTech",
+              "REIT",
+              "不動産クラウドファンディング",
+              "不動産投資"
+            ],
+            "focusAreas": [
+              "不動産投資プラットフォーム",
+              "デジタル証券",
+              "AI投資判断",
+              "ブロックチェーン金融"
+            ]
+          },
+          "trends": [
+            {
+              "title": "The International Fintech Review 2024/25（英語） - KPMGジャパン",
+              "source": "https://kpmg.com/jp/ja/home/insights/2025/01/international-fintech-review2024-25.html",
+              "description": "「The International Fintech Review 2024/25」は、世界各国・地域のフィンテック市場の業界内の重要な課題、主要な開発、最新のトレンドに焦点を当て、フィンテック業界の ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "【見逃し厳禁】2025年度10の「フィンテックトレンド」 - ビジネス+IT",
+              "source": "https://www.sbbit.jp/article/fj/160427",
+              "description": "実際、2024年度には歴史ある金融機関とフィンテック企業の間の連携の深化を示唆する事例が多数報道された。 いくつか例を挙げる。",
+              "reliability": 0.7
+            },
+            {
+              "title": "最近よく聞くフィンテック企業とは？市場規模・将来性を解説 | 知る",
+              "source": "https://moneycanvas.bk.mufg.jp/know/column/gbpL5eDntO10Vcu/",
+              "description": "2024年の新NISAの開始により、貯蓄から投資への流れが加速し、日本でも投資を始める人が増えると期待されています。 そんな中、「フィンテック」という言葉を耳にする ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "フィンテック市場、2030年に1.5兆ドル規模へ - BCG Japan",
+              "source": "https://bcg-jp.com/article/6817/",
+              "description": "暗号資産や中国関連を除くフィンテックの収益は特に好調  世界のフィンテック企業は順調に収益を伸ばし続けて、 2021年から2023年の2年間の年平均成長率（CAGR）は14％、暗号資産や中国関連のフィンテックを除くと同21％ の成長を遂げている(図表1) 。",
+              "reliability": 0.6
+            },
+            {
+              "title": "日本のフィンテック市場規模、シェア、成長、予測 2025-2033",
+              "source": "https://newscast.jp/news/7501469",
+              "description": "IMARCグループによると、日本のフィンテック市場規模は2024年に92億米ドルに達しました。今後、IMARCグループは、2025年から2033年にかけて成長率(CAGR)14.1%で、2033年 ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "世界のフィンテック市場は2033年までに8284億米ドルに達する見込み",
+              "source": "https://www.imarcgroup.com/pressrelease/ja/fintech-market-statistics",
+              "description": "グローバルフィンテック市場規模は、2024年には2,188億米ドルと評価され、2033年には8,284億米ドルに達すると予想され、2025年から2033年までの成長率（CAGR）は15.82％であ ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "フィンテックアセットマネジメント",
+              "source": "https://www.fgiam.co.jp/",
+              "description": "フィンテック アセットマネジメントは、東証上場企業であるフィンテック グローバル（FGI）のグループ会社として、アセットマネジメント事業や不動産小口化商品などにおいて ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "WealthPark Alternative Investments株式会社、取締役に竹内 絵理子 ...",
+              "source": "https://wealth-park.com/ja/news/20241101-wpaibod001/",
+              "description": "WealthParkグループの中でWPAIは「Fintech事業」を担っており、これまでWealthParkが不動産管理会社様とともに広げてきた個人投資家様向けのモバイルアプリやインフラ ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "世界をリードする日系FinTechベンチャー10選：未来の金融を探る",
+              "source": "https://www.kotora.jp/c/59223/",
+              "description": "日系FinTech企業は、他国のFinTech企業との連携を強化し、グローバルなビジネス機会を創出しています。たとえば、日本の企業が海外のスタートアップと協力することで、技術 ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "[PDF] データセンターREITの促進に関する提案 説明資料",
+              "source": "https://www.chisou.go.jp/tiiki/kokusentoc_wg/r7/pdf/250623_shiryou_1_1.pdf",
+              "description": "データセンター事業者はREITに売却し資産を流動化することで、資産がバランス. シートに計上されることによる資本効率が改善され、融資の獲得が有利となる。 実現される姿.",
+              "reliability": 0.7
+            },
+            {
+              "title": "巷でリート（REIT）はおすすめしないといわれる理由とメリットの ...",
+              "source": "https://creal.jp/blogs/real-estate-investment/2352/",
+              "description": "リートはおすすめしないと言われる理由は主に7つあります。元本割れリスクがある・投資法人の倒産・上場廃止リスクがある・分配金の減額リスクがある・複利効果を得 ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "[PDF] J-REIT（不動産投資信託）市場の軌跡と展望 に関する調査",
+              "source": "https://www.smtri.jp/report_column/report/pdf/report_20241004-1.pdf",
+              "description": "J-REIT 市場における主要な投資主構成は、投資信託 35.5％、外国法人等 24.3％、金融機関. 20.0％、国内事業法人等 8.7％、証券会社 3.8％、個人・その他 7.7％（2024 年 2 月末 ...",
+              "reliability": 0.7
+            }
+          ],
+          "summary": "2024年から2033年にかけてのフィンテック市場は、投資流れの加速、金融機関との連携深化、収益の順調な伸び（年平均成長率14%以上）を予測。特に日本市場は2024年に92億ドル、2033年には市場規模が8284億ドルに達する見込み。この成長は、新たなビジネス機会、特にアセットマネジメントや不動産投資（REIT含む）、国際協力を含む分野での機会を示唆している。",
+          "relevanceScore": 0.5
+        },
+        {
+          "category": {
+            "id": "smartcity",
+            "name": "スマートシティ",
+            "description": "都市のデジタル化・持続可能な街づくり",
+            "keywords": [
+              "スマートシティ",
+              "スマートコミュニティ",
+              "都市OS",
+              "MaaS"
+            ],
+            "focusAreas": [
+              "都市OS",
+              "エネルギー管理",
+              "モビリティ",
+              "デジタルツイン"
+            ]
+          },
+          "trends": [
+            {
+              "title": "2024年版国内スマートシティ事例 前編 ―5つの都市の事業モデルと ...",
+              "source": "https://openhub.ntt.com/journal/11946.html",
+              "description": "同市がスマートシティの目標として掲げているのは「市民QoL（生活の質）の向上」と「都市の最適化」。「オープンイノベーション」「市民起点/サービスデザイン思考」「 ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "2024年版国内スマートシティ事例 後編 ―4つの都市のサービスモデル",
+              "source": "https://openhub.ntt.com/journal/11982.html",
+              "description": "デジタル田園都市推進事業を中心に、国内のスマートシティの事例を紹介します。「埼玉県熊谷市」「鳥取県」「群馬県前橋市」「静岡県三島市、熱海市、函南町」の4つの ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "スマートシティ 2024年版わが国の主要5都市における意識調査",
+              "source": "https://kpmg.com/jp/ja/home/insights/2024/12/smart-cities-2024.html",
+              "description": "スマートシティに関して期待する分野を聞いたところ、「医療・ヘルスケア」「防犯・安心」「防災・減災」が高く約50%に達しています。「医療・ヘルスケア」への期待度が ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "スマートシティ市場は19.7%の大幅成長を記録 - Market.us Scoop",
+              "source": "https://scoop.market.us/%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%E3%82%B7%E3%83%86%E3%82%A3%E5%B8%82%E5%A0%B4%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%B9/",
+              "description": "スマートシティ市場は2033年までに4605.7億ドルに達し、年平均成長率（CAGR） 19.7% を記録する見込み。 スマートシティ技術（IoT、AI、データ分析）が都市インフラを変革している。 企業は革新、協力、持続可能性に投資すべき。",
+              "reliability": 0.6
+            },
+            {
+              "title": "スマートシティの市場規模、共有|グローバル成長レポート[2032]",
+              "source": "https://www.fortunebusinessinsights.com/jp/%E6%A5%AD%E7%95%8C-%E3%83%AC%E3%83%9D%E3%83%BC%E3%83%88/%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%E3%82%B7%E3%83%86%E3%82%A3%E5%B8%82%E5%A0%B4-100610",
+              "description": "世界のスマートシティ市場規模は2023年に623.90億ドルと評価され、2024年の767.75億ドルから2032年までに4647.63億ドルに成長すると予測されています。",
+              "reliability": 0.7
+            },
+            {
+              "title": "「スマートシティのグローバル市場（～2030）：重点分野別 ...",
+              "source": "https://presswalker.jp/press/80658",
+              "description": "年平均成長率（CAGR）：2022～2032年の複合成長率は約8.4％に達すると見込まれています。 市場拡大の要因としては、都市化によるインフラ逼迫への対策、環境規制強化に ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "国内外のスマートシティの事例17選！推進のポイントや失敗例を紹介",
+              "source": "https://www.intec.co.jp/column/smartcity-03.html",
+              "description": "さらに、データ利活用型スマートシティ推進事業の支援も行われており、地方公共団体や民間企業に対する補助事業が実施されています。 都市の課題解決に向けて、データ ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "未来への道程（\"Smart Cities and Digital Innovation: a guide to the ...",
+              "source": "https://maximize.co.jp/2887/innovation/",
+              "description": "都市開発にIoTなどのデジタル技術を取り入れることでスマートシティを実現することおよびその課題、スマートシティのもたらす事業機会についてのお話しです。",
+              "reliability": 0.7
+            },
+            {
+              "title": "いま注目のスマートシティ！5つの成功事例とポイントを解説",
+              "source": "https://www.nttdata-kansai.co.jp/media/081/",
+              "description": "具体的には、IoT（モノのインターネット）、AI（人工知能）、ビッグデータなどの技術を駆使して、エネルギー、交通、医療、行政サービスなど、都市のあらゆる側面を効率化し ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "国内外のスマートシティの事例17選！推進のポイントや失敗例を紹介",
+              "source": "https://www.intec.co.jp/column/smartcity-03.html",
+              "description": "特に、北九州スマートコミュニティ創造事業では、以下の5つのコンセプトを目指してまちづくりが推進されています。 1. 住民参加のまちづくり. 2. 地域エネルギーの共存社会.",
+              "reliability": 0.7
+            },
+            {
+              "title": "[PDF] 次世代電力マネジメント編 - 福島県",
+              "source": "https://www.pref.fukushima.lg.jp/uploaded/attachment/683702.pdf",
+              "description": "... スマートコミュニティ事業を進める動きが出てきた。 ○福島県も、脱炭素を目指すまちづくりと連動したスマートコミュニティ事業に取り組む自治体の動きが進んでいる。",
+              "reliability": 0.7
+            },
+            {
+              "title": "都市の未来像！スマートシティを進める自治体一覧 - インテック",
+              "source": "https://www.intec.co.jp/column/smartcity-04.html",
+              "description": "地域新MaaS創出推進事業とは、新たなモビリティサービスの社会実装と高度化を目指して、課題解決に先進的・横断的に取り組む提案に対して委託事業として支援をします。MaaS ...",
+              "reliability": 0.7
+            }
+          ],
+          "summary": "スマートシティの分野では、市民のQoL向上と都市最適化を目指し、医療・ヘルスケア、防犯・安全、防災・減災への期待が高まっています。市場は2033年に4605.7億ドルに達する予測で、IoT、AI、データ分析の技術革新が推進力です。国内外の事例からは、市民参加、地域エネルギー共存、データ利活用が重要なポイントとして浮かび上がります。ビジネス機会としては、技術革新の提供、市民参加型サービスの開発、環境規制対応策の提案が考えられます。",
+          "relevanceScore": 0.5
+        },
+        {
+          "category": {
+            "id": "proptech",
+            "name": "PropTech（不動産テック）",
+            "description": "不動産業界のデジタル化・テクノロジー活用",
+            "keywords": [
+              "PropTech",
+              "不動産テック",
+              "スマートビルディング",
+              "IoT不動産"
+            ],
+            "focusAreas": [
+              "スマートビルディング",
+              "VR内覧",
+              "AI査定",
+              "ブロックチェーン不動産"
+            ]
+          },
+          "trends": [
+            {
+              "title": "Proptech市場規模、シェア、トレンド|予測レポート[2032]",
+              "source": "https://www.fortunebusinessinsights.com/jp/%E3%83%97%E3%83%AD%E3%83%83%E3%83%97%E3%83%86%E3%83%83%E3%82%AF%E5%B8%82%E5%A0%B4-108634",
+              "description": "北米は2024年に38.03％のシェアで世界市場を支配しました。 PropTechは、不動産、プラットフォーム経済学、デジタルテクノロジーの統一を指します。",
+              "reliability": 0.7
+            },
+            {
+              "title": "【2025年最新版】不動産業界のマーケティング手法完全ガイド",
+              "source": "https://leango.co.jp/dejam/documents/gyokhdva/",
+              "marketSize": {
+                "unit": "兆円",
+                "year": 2024,
+                "value": 315.1
+              },
+              "description": "投資市場の驚異的な成長トレンド ... 2024年の不動産投資市場は過去最高水準を更新し、その勢いは2025年も継続しています。「収益不動産」の資産規模は約315.1兆円（前回調査 ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "今後の不動産テックの展望：技術革新が変える業界",
+              "source": "https://www.n-create.co.jp/pr/column/other/industry-trends/",
+              "description": "不動産テックの最新動向を解説。不動産業界に革命をもたらすAI、IoT、クラウド、電子契約システムの活用事例や、業務効率化と顧客満足度向上のポイントを詳しく紹介し ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "AIが予測するPropTech（不動産テック）業界 業界｜2030年市場規模 ...",
+              "source": "https://service.xenobrain.jp/forecastresults/market-size/proptech",
+              "marketSize": {
+                "unit": "億円",
+                "year": 2030,
+                "value": 504
+              },
+              "description": "PropTech業界 2030年市場規模 +26.12%増で9,504億円と予測 PropTechの国内市場規模は、現在の7,536億円 と推計。 今後5年間で26.12%成長し9,504億円に達すると予測する 。",
+              "reliability": 0.6
+            },
+            {
+              "title": "注目の不動産テックとは？企業が知っておくべき基礎知識と導入の ...",
+              "source": "https://www.jll.com/ja-jp/insights/what-is-real-estate-tech-points-businesses-should-know",
+              "description": "Grand View Researchの発表したレポートによると、世界の不動産テック市場の規模は、2022年から2030年にかけて年平均成長率（CAGR）15.8％で成長し、972億70万米ドルに達する ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "Proptech市場規模、シェア、トレンド|予測レポート[2032]",
+              "source": "https://www.fortunebusinessinsights.com/jp/%E3%83%97%E3%83%AD%E3%83%83%E3%83%97%E3%83%86%E3%83%83%E3%82%AF%E5%B8%82%E5%A0%B4-108634",
+              "description": "市場は2025年の4,900億米ドルから2032年までに883億7000万米ドルに成長すると予測されており、予測期間中は11.9％のCAGRを示しています。 北米は2024年に38.03％のシェアで ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "プロップテック（PropTech）の進展と不動産ビジネスチャンス",
+              "source": "https://www.digitalbase.co.jp/post/%E3%83%97%E3%83%AD%E3%83%83%E3%83%97%E3%83%86%E3%83%83%E3%82%AF%EF%BC%88proptech%EF%BC%89%E3%81%AE%E9%80%B2%E5%B1%95%E3%81%A8%E4%B8%8D%E5%8B%95%E7%94%A3%E3%83%93%E3%82%B8%E3%83%8D%E3%82%B9%E3%83%81%E3%83%A3%E3%83%B3%E3%82%B9",
+              "description": "プロップテック（PropTech）、不動産テックは世界的なトレンドであり、不動産ビジネスの各業務領域でスタートアップが相次いで誕生・成長しています。",
+              "reliability": 0.7
+            },
+            {
+              "title": "不動産テック（PropTech）とは？業界を変える最新テクノロジーと ...",
+              "source": "https://maitconsult.com/%E4%B8%8D%E5%8B%95%E7%94%A3%E3%83%86%E3%83%83%E3%82%AF%EF%BC%88proptech%EF%BC%89%E3%81%A8%E3%81%AF%EF%BC%9F%E6%A5%AD%E7%95%8C%E3%82%92%E5%A4%89%E3%81%88%E3%82%8B%E6%9C%80%E6%96%B0%E3%83%86%E3%82%AF/",
+              "description": "事業内容：不動産投資のワンストップサービス、AI査定、電子契約 · 特徴：テック活用による「早い・安い・確実」な不動産取引 · 公式サイト ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "Proptech市場規模、シェア、トレンド|予測レポート[2032]",
+              "source": "https://www.fortunebusinessinsights.com/jp/%E3%83%97%E3%83%AD%E3%83%83%E3%83%97%E3%83%86%E3%83%83%E3%82%AF%E5%B8%82%E5%A0%B4-108634",
+              "description": "世界のプロップテック市場規模は、2032年までに2025年の40190億ドルから2032年までに883億7000万ドルに成長すると予測されています。",
+              "reliability": 0.7
+            },
+            {
+              "title": "注目の不動産テックとは？企業が知っておくべき基礎知識と導入の ...",
+              "source": "https://www.jll.com/ja-jp/insights/what-is-real-estate-tech-points-businesses-should-know",
+              "description": "世界的に注目を浴びる不動産テックについて、種類や技術・市場動向、導入のメリット、導入手順や注意点など基本的な知識を解説。企業の成功事例も紹介する。",
+              "reliability": 0.7
+            },
+            {
+              "title": "【2024年】不動産テックとは？これだけは知っておきたい最新 ...",
+              "source": "https://retech-network.com/posts/detail/1112",
+              "description": "スペースシェアリングやリフォーム・リノベーション以外にも、不動産に関連する多様なマッチング機会があります。 不動産物件の売主と買主、業務を依頼したい人と請け負う ...",
+              "reliability": 0.7
+            },
+            {
+              "title": "不動産テックとは？種類・課題・メリット【注目の不動産業界 ...",
+              "source": "https://boxil.jp/mag/a3076/",
+              "description": "不動産事業を目的とした資金需要者と提供者をマッチングさせるサービスもあります。 個人にとっては少額から不動産投資を行えるようになり、資金調達側にも、クラウド ...",
+              "reliability": 0.7
+            }
+          ],
+          "summary": "北米が2024年にPropTech市場を支配し、市場は2032年までに883億7000万ドルに成長予測。AI、IoT、クラウドの活用が業界に革命をもたらし、不動産投資市場は2025年も成長継続。年平均成長率15.8%で、不動産ビジネスに新たなチャンスが生まれている。",
+          "relevanceScore": 0.5
+        }
+      ],
+      "researchDataIds": [
+        "5ea76c5a-3143-474f-a302-6326f8f66cf9"
+      ]
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "timestamp": "2025-08-03T11:42:08.830Z",
+  "sessionId": "new-session",
+  "agent": "Session Creation",
+  "phase": "input",
+  "stepNumber": 3,
+  "data": {
+    "user_input": "スマートシティとIoT技術を活用した新規事業"
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "success": true,
+  "ideas": [
+    {
+      "id": "cb462ecf-bd59-4d8d-92b1-988719e7c556",
+      "session_id": "d052ceab-f5bf-4a46-b3d3-1d0adf4f9bba",
+      "title": "AI不動産アシスタント",
+      "description": "AIを活用し、物件検索から価格予測、投資収益率の算出までを行う不動産アシスタントサービス。ユーザーは簡単に理想の物件を見つけ、投資判断をサポートされる。",
+      "target_market": "不動産投資家、一般消費者",
+      "market_size": 1000,
+      "revenue_model": "月額課金、成功報酬型手数料",
+      "initial_investment": 200,
+      "projected_profit": 30,
+      "timeline": "5-10年",
+      "mitsubishi_assets": [],
+      "capability_utilization": {},
+      "is_selected": false,
+      "created_at": "2025-08-03T09:26:59.028404+00:00",
+      "capability_scenario": "三菱地所の金融・投資力を活かして、具体的には日本リテールファンド投資法人を通じて不動産投資を行い、機関投資家とのネットワークを活用して資金調達を強化することでAI不動産アシスタントのビジネスを加速できる。さらに、イノベーション力によりTMIPスマートシティプラットフォームを利用し、PropTech企業との連携を促進することで、最新のテクノロジーを活用したサービス展開を実現する",
+      "capability_categories": [
+        "金融・投資力",
+        "イノベーション力"
+      ],
+      "network_partners": []
+    },
+    {
+      "id": "fcb20398-ceb8-440a-ad79-e9eab36718cb",
+      "session_id": "d052ceab-f5bf-4a46-b3d3-1d0adf4f9bba",
+      "title": "EdTechコミュニケーションプラットフォーム",
+      "description": "AIを用いた効果的なコミュニケーションスキルを育成するオンラインプラットフォーム。企業向けにカスタマイズした研修が受けられる。",
+      "target_market": "企業、教育機関",
+      "market_size": 1000,
+      "revenue_model": "サブスクリプション、ライセンス販売",
+      "initial_investment": 160,
+      "projected_profit": 20,
+      "timeline": "5-10年",
+      "mitsubishi_assets": [],
+      "capability_utilization": {},
+      "is_selected": false,
+      "created_at": "2025-08-03T09:26:59.028404+00:00",
+      "capability_scenario": "三菱地所の商業施設運営力を活かして、具体的にはアクアシティお台場の空間を利用した没入型エンターテイメント体験施設を開発し、テナント企業（アパレル・飲食・物販）との連携を強化することで集客を促進しビジネスを加速できる。さらに、イノベーション力により、スタートアップ企業との協業を通じてAR/VR技術を導入し、独自の体験を提供することで差別化を図る",
+      "capability_categories": [
+        "商業施設運営力",
+        "イノベーション力"
+      ],
+      "network_partners": [
+        "テナント企業",
+        "スタートアップ"
+      ]
+    },
+    {
+      "id": "1583a300-0552-459b-8134-b13592082ddc",
+      "session_id": "d052ceab-f5bf-4a46-b3d3-1d0adf4f9bba",
+      "title": "高齢者向けスマートモビリティサービス",
+      "description": "高齢者が安全かつ快適に移動できるデジタルプラットフォーム。運転手と乗客をマッチングし、専用の車両で提供。",
+      "target_market": "高齢者、介護サービス提供者",
+      "market_size": 1000,
+      "revenue_model": "利用料金、月額会員プラン",
+      "initial_investment": 140,
+      "projected_profit": 14,
+      "timeline": "5-10年",
+      "mitsubishi_assets": [
+        "パークハウス"
+      ],
+      "capability_utilization": {},
+      "is_selected": false,
+      "created_at": "2025-08-03T09:26:59.028404+00:00",
+      "capability_scenario": "三菱地所の住宅事業力を活かして、具体的にはザ・パークハウスシリーズを高齢者向けスマートモビリティサービスの拠点として活用し、三菱地所コミュニティとのネットワークを通じて高品質な住宅環境を提供することでビジネスを加速できる。さらに、イノベーション力により、TMIPスマートシティプラットフォームを利用してデジタル技術を駆使した安全な移動手段を提供し、ユーザーの利便性を向上させる",
+      "capability_categories": [
+        "住宅事業力",
+        "イノベーション力"
+      ],
+      "network_partners": []
+    },
+    {
+      "id": "3b908c78-ca26-46ea-b23c-ad1fcec0abb8",
+      "session_id": "d052ceab-f5bf-4a46-b3d3-1d0adf4f9bba",
+      "title": "没入型エンターテイメント体験施設",
+      "description": "AR/VR技術を駆使した没入型体験を提供する施設。観光客や地元の消費者に新たなエンターテイメント体験を提供。",
+      "target_market": "観光客、地域住民",
+      "market_size": 1000,
+      "revenue_model": "入場料、グッズ販売",
+      "initial_investment": 300,
+      "projected_profit": 53,
+      "timeline": "5-10年",
+      "mitsubishi_assets": [],
+      "capability_utilization": {},
+      "is_selected": false,
+      "created_at": "2025-08-03T09:26:59.028404+00:00",
+      "capability_scenario": "三菱地所のイノベーション力を活かして、具体的にはMec Industry DXセンターを活用してサステナブル物流プラットフォームの開発を行い、スタートアップ企業や大学とのネットワークを通じて新しいテクノロジーを実証することでビジネスを加速できる。さらに、金融・投資力を利用して日本リテールファンド投資法人からの資金調達を行い、持続可能な物流システムの構築を促進する",
+      "capability_categories": [
+        "イノベーション力",
+        "金融・投資力"
+      ],
+      "network_partners": [
+        "スタートアップ"
+      ]
+    },
+    {
+      "id": "dc0db296-0040-42c8-86e3-948a5d3dc606",
+      "session_id": "d052ceab-f5bf-4a46-b3d3-1d0adf4f9bba",
+      "title": "サステナブル物流プラットフォーム",
+      "description": "物流業界のデジタル化とサステナビリティを両立させるプラットフォーム。AIとIoTを活用し、効率的かつ環境に優しい物流を実現。",
+      "target_market": "物流企業、小売業者",
+      "market_size": 1000,
+      "revenue_model": "月額利用料、成功報酬型手数料",
+      "initial_investment": 180,
+      "projected_profit": 25,
+      "timeline": "5-10年",
+      "mitsubishi_assets": [],
+      "capability_utilization": {},
+      "is_selected": false,
+      "created_at": "2025-08-03T09:26:59.028404+00:00",
+      "capability_scenario": "",
+      "capability_categories": [],
+      "network_partners": []
+    }
+  ],
+  "count": 5
+}

@@ -1,0 +1,136 @@
+{
+  "timestamp": "2025-08-03T11:43:05.545Z",
+  "sessionId": "94517614-732a-43bd-84cc-0db8306c1069",
+  "agent": "Ideation Agent V2",
+  "phase": "output",
+  "stepNumber": 8,
+  "duration": 45382,
+  "data": {
+    "success": true,
+    "ideas": [
+      {
+        "id": "803d3159-ea68-4557-9e27-7506f663063a",
+        "session_id": "94517614-732a-43bd-84cc-0db8306c1069",
+        "title": "AI不動産アシスタント",
+        "description": "AIを活用した不動産管理プラットフォームを提供し、物件の評価、賃貸管理、顧客サポートを自動化します。",
+        "target_market": "不動産業界",
+        "market_size": 1000,
+        "revenue_model": "サブスクリプションモデル、トランザクションフィー",
+        "initial_investment": 200,
+        "projected_profit": 25,
+        "timeline": "5-10年",
+        "mitsubishi_assets": [
+          "パークハウス"
+        ],
+        "capability_utilization": {},
+        "is_selected": false,
+        "created_at": "2025-08-03T11:43:05.484006+00:00",
+        "capability_scenario": "三菱地所の住宅事業力を活かして、具体的にはザ・パークハウスシリーズやパークホームズを開発・管理し、三菱地所レジデンスのネットワークを通じて高品質な賃貸サービスを提供することでビジネスを加速できる。さらに、イノベーション力により、TMIPスマートシティプラットフォームを活用して、デジタル化された住居管理システムを導入し、効率的な顧客サポートを実現する。",
+        "capability_categories": [
+          "住宅事業力",
+          "イノベーション力"
+        ],
+        "network_partners": []
+      },
+      {
+        "id": "ea36bc46-d9b6-41e0-a561-52f43a967eb9",
+        "session_id": "94517614-732a-43bd-84cc-0db8306c1069",
+        "title": "EdTech企業研修プラットフォーム",
+        "description": "EdTech技術を活用し、企業向けのオンデマンド研修プログラムを提供。特にコミュニケーションやリーダーシップスキルに重点を置く。",
+        "target_market": "企業向け研修市場",
+        "market_size": 1000,
+        "revenue_model": "サブスクリプション料金、個別研修プログラム販売",
+        "initial_investment": 40,
+        "projected_profit": 6,
+        "timeline": "5-10年",
+        "mitsubishi_assets": [
+          "丸の内",
+          "アウトレット"
+        ],
+        "capability_utilization": {},
+        "is_selected": false,
+        "created_at": "2025-08-03T11:43:05.484006+00:00",
+        "capability_scenario": "三菱地所のイノベーション力を活かして、具体的にはMec Industry DXセンターを拠点とし、スタートアップ企業と連携して新しいEdTech研修プラットフォームを開発することでビジネスを加速できる。また、商業施設運営力により、プレミアム・アウトレットや丸の内仲通りでの実証フィールドを活用し、テナント企業と連携して研修プログラムを提供することで、実践的なスキルの習得を促進する。",
+        "capability_categories": [
+          "イノベーション力",
+          "商業施設運営力"
+        ],
+        "network_partners": [
+          "テナント企業",
+          "スタートアップ"
+        ]
+      },
+      {
+        "id": "c413cc71-5629-4aee-b497-4f2792e6a7f1",
+        "session_id": "94517614-732a-43bd-84cc-0db8306c1069",
+        "title": "スマートモビリティサービス",
+        "description": "高齢者向けに特化した安全な交通手段を提供し、デジタル技術を用いた予約・配車サービスを展開します。",
+        "target_market": "高齢者モビリティ市場",
+        "market_size": 1000,
+        "revenue_model": "運賃収入、サブスクリプションモデル",
+        "initial_investment": 60,
+        "projected_profit": 6,
+        "timeline": "5-10年",
+        "mitsubishi_assets": [
+          "みなとみらい"
+        ],
+        "capability_utilization": {},
+        "is_selected": false,
+        "created_at": "2025-08-03T11:43:05.484006+00:00",
+        "capability_scenario": "三菱地所の都市開発力を活かして、具体的にはみなとみらい21の複合開発を通じて、地域に特化したスマートモビリティサービスを展開することでビジネスを加速できる。さらに、イノベーション力により、TMIPスマートシティプラットフォームを利用して、デジタル技術を駆使した予約・配車システムを導入し、高齢者向けの安全な交通手段を提供する。",
+        "capability_categories": [
+          "都市開発力",
+          "イノベーション力"
+        ],
+        "network_partners": []
+      },
+      {
+        "id": "7c7ccfd4-fb39-4675-befb-bd29d8889a64",
+        "session_id": "94517614-732a-43bd-84cc-0db8306c1069",
+        "title": "AR/VR体験型観光プラットフォーム",
+        "description": "日本の観光資源を活用したAR/VR体験を提供し、外国人観光客をターゲットにした没入型エンターテインメントを開発します。",
+        "target_market": "観光業界",
+        "market_size": 1000,
+        "revenue_model": "チケット販売、サブスクリプション、スポンサーシップ",
+        "initial_investment": 300,
+        "projected_profit": 53,
+        "timeline": "5-10年",
+        "mitsubishi_assets": [],
+        "capability_utilization": {},
+        "is_selected": false,
+        "created_at": "2025-08-03T11:43:05.484006+00:00",
+        "capability_scenario": "三菱地所の国際事業力を活かして、具体的には米国オフィスビルやアジア商業施設を舞台に、AR/VR体験型観光プラットフォームを展開することでビジネスを加速できる。また、イノベーション力により、スタートアップ支援施設を活用して、現地のテクノロジー企業と連携し、没入型エンターテインメントの開発を進めることで、外国人観光客の誘致を図る。",
+        "capability_categories": [
+          "国際事業力",
+          "イノベーション力"
+        ],
+        "network_partners": [
+          "スタートアップ"
+        ]
+      },
+      {
+        "id": "a308fbc1-7f87-46c8-b7e1-796523f4358d",
+        "session_id": "94517614-732a-43bd-84cc-0db8306c1069",
+        "title": "サステナブル物流プラットフォーム",
+        "description": "AI、IoT技術を駆使した持続可能な物流管理サービスを提供し、カーボンフットプリントを削減するソリューションを展開します。",
+        "target_market": "物流業界",
+        "market_size": 1000,
+        "revenue_model": "ソフトウェアライセンス、データ分析サービス",
+        "initial_investment": 120,
+        "projected_profit": 17,
+        "timeline": "5-10年",
+        "mitsubishi_assets": [],
+        "capability_utilization": {},
+        "is_selected": false,
+        "created_at": "2025-08-03T11:43:05.484006+00:00",
+        "capability_scenario": "三菱地所のイノベーション力を活かして、具体的にはAIやIoT技術を駆使したサステナブル物流プラットフォームを構築することでビジネスを加速できる。さらに、金融・投資力を活用し、日本リテールファンド投資法人や産業ファンド投資法人からの資金調達を行い、持続可能な物流管理サービスの拡充を図ることができる。",
+        "capability_categories": [
+          "イノベーション力",
+          "金融・投資力"
+        ],
+        "network_partners": []
+      }
+    ],
+    "count": 5
+  }
+}
