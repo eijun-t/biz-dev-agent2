@@ -1,0 +1,124 @@
+{
+  "sessionId": "625ba1cc-c811-483d-9cdb-0267e4802ad8",
+  "marketData": {
+    "trends": [
+      {
+        "category": "Smart City",
+        "trend_name": "スマートビルディング",
+        "description": "IoTとAIを活用した次世代ビル管理",
+        "market_size": 3000,
+        "growth_rate": 25,
+        "relevance_score": 9
+      },
+      {
+        "category": "PropTech",
+        "trend_name": "デジタルツイン",
+        "description": "建物・都市のデジタル複製による最適化",
+        "market_size": 2000,
+        "growth_rate": 35,
+        "relevance_score": 8
+      }
+    ],
+    "technologies": [
+      {
+        "technology_name": "IoTセンサー",
+        "description": "環境データのリアルタイム収集",
+        "maturity_level": "growth",
+        "adoption_rate": 40,
+        "impact_potential": 8
+      }
+    ],
+    "regulations": [],
+    "opportunities": [
+      {
+        "opportunity_name": "次世代オフィス",
+        "description": "ポストコロナの新しい働き方に対応",
+        "target_market": "大手企業",
+        "estimated_market_size": 1500,
+        "competitive_landscape": "競合増加中"
+      }
+    ]
+  },
+  "businessIdeas": [
+    {
+      "id": "7584f088-e9e5-405e-9d88-1cfa1b77b960",
+      "session_id": "625ba1cc-c811-483d-9cdb-0267e4802ad8",
+      "title": "次世代スマートビル管理プラットフォーム",
+      "description": "IoTセンサーとAIを活用し、リアルタイムでビルの環境データを管理・最適化するプラットフォーム。エネルギー効率や設備管理を自動化し、運営コストを削減。",
+      "target_market": "大手企業・不動産管理会社",
+      "market_size": 3000,
+      "revenue_model": "サブスクリプション型（月額利用料）及びデータ分析サービスの販売",
+      "initial_investment": 60,
+      "projected_profit": 9,
+      "timeline": "5-10年",
+      "mitsubishi_assets": [
+        "丸の内"
+      ],
+      "capability_utilization": {},
+      "is_selected": false,
+      "created_at": "2025-08-03T06:37:41.119926+00:00",
+      "capability_scenario": "三菱地所の都市開発力を活かして、具体的には丸の内エリアの主要ビルを実証フィールドとして活用し、数千社のテナント企業と連携してスマートビル技術を導入・検証することでビジネスを加速できる。さらにイノベーション力により、TMIPやMec Industry DXセンターを通じてスタートアップ企業や大学との共同開発を推進し、最先端技術の実装を加速する",
+      "capability_categories": [
+        "都市開発力",
+        "イノベーション力"
+      ],
+      "network_partners": [
+        "テナント企業",
+        "スタートアップ"
+      ]
+    },
+    {
+      "id": "6478ba17-1cbb-4c05-af31-7ac4a53090ab",
+      "session_id": "625ba1cc-c811-483d-9cdb-0267e4802ad8",
+      "title": "デジタルツインによる都市最適化サービス",
+      "description": "建物や都市のデジタルツインを作成し、シミュレーションや解析を通じて資産の最適化を図るサービス。交通量やエネルギー消費の予測を行い、効率的な都市計画を支援。",
+      "target_market": "地方自治体・都市開発企業",
+      "market_size": 2000,
+      "revenue_model": "プロジェクトベースの契約及びライセンス販売",
+      "initial_investment": 40,
+      "projected_profit": 5,
+      "timeline": "5-10年",
+      "mitsubishi_assets": [
+        "みなとみらい"
+      ],
+      "capability_utilization": {},
+      "is_selected": false,
+      "created_at": "2025-08-03T06:37:41.119926+00:00",
+      "capability_scenario": "三菱地所の都市開発力を活かして、みなとみらい21のデジタルツイン技術を活用し、地域全体の交通量やエネルギー消費の最適化を図ることができる。大手企業本社や金融機関とのネットワークを利用して、共同で効率的な都市計画を推進し、結果的に持続可能な都市開発を実現することができる。",
+      "capability_categories": [
+        "都市開発力",
+        "イノベーション力"
+      ],
+      "network_partners": [
+        "大手企業",
+        "金融機関"
+      ]
+    },
+    {
+      "id": "323c664c-153e-4d44-b553-81a23f2530c5",
+      "session_id": "625ba1cc-c811-483d-9cdb-0267e4802ad8",
+      "title": "ポストコロナ対応次世代オフィスソリューション",
+      "description": "リモートワークとオフィス勤務のハイブリッドに対応したオフィススペースのデザイン・提案サービス。従業員の健康管理や安全対策を組み込んだ新しい働き方を提案。",
+      "target_market": "大手企業・オフィスビルオーナー",
+      "market_size": 1500,
+      "revenue_model": "コンサルティングフィー及びデザイン・施工費用",
+      "initial_investment": 30,
+      "projected_profit": 3,
+      "timeline": "5-10年",
+      "mitsubishi_assets": [
+        "大手町"
+      ],
+      "capability_utilization": {},
+      "is_selected": false,
+      "created_at": "2025-08-03T06:37:41.119926+00:00",
+      "capability_scenario": "三菱地所の住宅事業力を活かして、高品質な住宅開発と管理を行い、特に大手町エリアでの新しい働き方に対応したオフィススペースの提案が可能である。スタートアップ支援施設やテクノロジー企業とのネットワークを活用し、デジタル技術を駆使して、リモートワーク環境の整備や従業員の健康管理を組み込んだオフィスデザインを実現し、ビジネスの加速を図る。",
+      "capability_categories": [
+        "都市開発力",
+        "イノベーション力"
+      ],
+      "network_partners": [
+        "スタートアップ"
+      ]
+    }
+  ]
+}

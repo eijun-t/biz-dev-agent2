@@ -1,0 +1,14 @@
+{
+  "success": true,
+  "sessionId": "94517614-732a-43bd-84cc-0db8306c1069",
+  "session": {
+    "id": "94517614-732a-43bd-84cc-0db8306c1069",
+    "user_id": null,
+    "user_input": "スマートシティとIoT技術を活用した新規事業",
+    "status": "in_progress",
+    "created_at": "2025-08-03T11:42:09.308265+00:00",
+    "updated_at": "2025-08-03T11:42:09.308265+00:00",
+    "agent_outputs": null,
+    "error_message": null
+  }
+}

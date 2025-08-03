@@ -1,194 +1,120 @@
-// BaseAgentクラス - 全てのエージェントの基底クラス
-// エラー隠蔽禁止の原則を実装
+// ベースエージェントクラス（information-collection-agent用）
+import { createClient } from '@supabase/supabase-js';
+import { Database } from '@/types/database';
 
-import { createServerClient } from '@/lib/supabase-server'
-import { ErrorHandler, ApiError, TimeoutError } from '@/lib/error-handler'
-import { Database } from '@/types/database'
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
+const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY!;
 
 export interface AgentContext {
-  sessionId: string
-  userId?: string
-  userInput?: string
+  sessionId: string;
+  userId?: string;
+  userInput?: string;
 }
 
 export interface AgentResult<T = any> {
-  success: boolean
-  data?: T
-  error?: string
-  errorDetails?: any
+  success: boolean;
+  data?: T;
+  error?: string;
+  errorDetails?: any;
 }
 
 export abstract class BaseAgent {
-  protected supabase = createServerClient()
-  protected agentName: string
-  protected context: AgentContext
+  protected name: string;
+  protected context: AgentContext;
+  protected supabase: ReturnType<typeof createClient<Database>>;
 
-  constructor(agentName: string, context: AgentContext) {
-    this.agentName = agentName
-    this.context = context
+  constructor(name: string, context: AgentContext) {
+    this.name = name;
+    this.context = context;
+    this.supabase = createClient<Database>(supabaseUrl, supabaseServiceKey, {
+      auth: {
+        persistSession: false
+      }
+    });
   }
 
-  // 抽象メソッド - 各エージェントで実装
-  protected abstract execute(): Promise<any>
-
-  // エージェント実行のラッパー
-  async run<T = any>(): Promise<AgentResult<T>> {
-    const startTime = Date.now()
-    
+  // エージェントの実行
+  async run(): Promise<AgentResult> {
     try {
-      // 進捗報告: 開始
-      await this.updateProgress(0, 'Starting...')
-
-      // タイムアウト付きで実行（10分制限）
-      const result = await ErrorHandler.withTimeout(
-        this.execute(),
-        10 * 60 * 1000, // 10分
-        this.agentName
-      )
-
-      // 進捗報告: 完了
-      await this.updateProgress(100, 'Completed')
-
+      await this.updateProgress(0, 'エージェント開始');
+      const result = await this.execute();
+      await this.updateProgress(100, '完了');
+      
       return {
         success: true,
         data: result
-      }
+      };
     } catch (error) {
-      // エラーハンドリング - エラー隠蔽禁止
-      await ErrorHandler.logError(error as Error, {
-        sessionId: this.context.sessionId,
-        agentName: this.agentName,
-        operation: 'execute'
-      })
-
-      // 進捗報告: エラー
-      await this.updateProgress(
-        0,
-        `Error: ${(error as Error).message}`,
-        'error'
-      )
-
-      const errorResponse = ErrorHandler.formatErrorResponse(error as Error)
+      const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+      await this.updateProgress(0, `エラー: ${errorMessage}`, 'error');
       
       return {
         success: false,
-        error: errorResponse.message,
-        errorDetails: errorResponse.details
-      }
-    } finally {
-      const duration = Date.now() - startTime
-      console.log(`[${this.agentName}] Execution time: ${duration}ms`)
+        error: errorMessage,
+        errorDetails: error
+      };
     }
   }
 
-  // 進捗更新
+  // 具体的な実行ロジック（サブクラスで実装）
+  protected abstract execute(): Promise<any>;
+
+  // 進捗の更新
   protected async updateProgress(
     percentage: number,
     message: string,
-    status: string = 'in_progress'
+    status: 'in_progress' | 'completed' | 'error' = 'in_progress'
   ): Promise<void> {
     try {
-      await this.supabase.from('progress_tracking').insert({
-        session_id: this.context.sessionId,
-        agent_name: this.agentName,
-        progress_percentage: percentage,
-        message,
-        status
-      })
+      await this.supabase
+        .from('progress_tracking')
+        .insert({
+          session_id: this.context.sessionId,
+          agent_name: this.name,
+          status,
+          progress_percentage: percentage,
+          message
+        });
     } catch (error) {
-      console.error(`Failed to update progress:`, error)
-      // 進捗更新の失敗は処理を止めない
+      console.error('Progress update failed:', error);
     }
   }
 
-  // API呼び出しの共通処理
+  // API呼び出しのラッパー
   protected async callApi<T>(
     apiCall: () => Promise<T>,
-    options: {
-      maxRetries?: number
-      operation?: string
-    } = {}
+    options: { operation: string }
   ): Promise<T> {
-    const { maxRetries = 3, operation = 'API call' } = options
-
     try {
-      return await ErrorHandler.retry(apiCall, {
-        maxRetries,
-        onRetry: (error, attempt) => {
-          console.log(
-            `[${this.agentName}] Retrying ${operation} (attempt ${attempt}/${maxRetries}):`,
-            error.message
-          )
-        }
-      })
+      return await apiCall();
     } catch (error) {
-      throw new ApiError(
-        `Failed to complete ${operation} after ${maxRetries} attempts`,
-        'API_CALL_FAILED',
-        500,
-        { originalError: (error as Error).message }
-      )
+      console.error(`${options.operation} failed:`, error);
+      throw error;
     }
   }
 
-  // データベース操作の共通処理
-  protected async dbOperation<T>(
-    operation: () => Promise<{ data: T | null; error: any }>,
-    errorMessage: string
-  ): Promise<T> {
-    const { data, error } = await operation()
-    
-    if (error) {
-      throw new ApiError(
-        errorMessage,
-        'DATABASE_ERROR',
-        500,
-        { dbError: error }
-      )
-    }
-
-    if (!data) {
-      throw new ApiError(
-        `${errorMessage}: No data returned`,
-        'NO_DATA',
-        404
-      )
-    }
-
-    return data
-  }
-
-  // バッチ処理用のヘルパー
+  // バッチ処理
   protected async processBatch<T, R>(
     items: T[],
     processor: (item: T) => Promise<R>,
     options: {
-      batchSize?: number
-      onProgress?: (processed: number, total: number) => void
-    } = {}
-  ): Promise<R[]> {
-    const { batchSize = 5, onProgress } = options
-    const results: R[] = []
-    
-    for (let i = 0; i < items.length; i += batchSize) {
-      const batch = items.slice(i, i + batchSize)
-      const batchResults = await Promise.all(
-        batch.map(item => processor(item))
-      )
-      results.push(...batchResults)
-      
-      if (onProgress) {
-        onProgress(results.length, items.length)
-      }
-      
-      // 進捗更新
-      const progress = Math.round((results.length / items.length) * 100)
-      await this.updateProgress(
-        progress,
-        `Processing: ${results.length}/${items.length} items`
-      )
+      batchSize: number;
+      onProgress?: (processed: number, total: number) => void;
     }
-    
-    return results
+  ): Promise<R[]> {
+    const results: R[] = [];
+    const { batchSize, onProgress } = options;
+
+    for (let i = 0; i < items.length; i += batchSize) {
+      const batch = items.slice(i, i + batchSize);
+      const batchResults = await Promise.all(batch.map(processor));
+      results.push(...batchResults);
+
+      if (onProgress) {
+        onProgress(Math.min(i + batchSize, items.length), items.length);
+      }
+    }
+
+    return results;
   }
 }

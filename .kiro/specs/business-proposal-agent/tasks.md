@@ -30,34 +30,30 @@
   - [x] 3.1 OpenAI API統合（Next.js App Router API Routes）
     - app/api/openai/配下にAPIエンドポイント作成
     - OpenAI APIクライアントの実装（lib/openai-client.ts）
-    - GPT-4o-miniモデルの使用
     - レート制限とエラーハンドリング機能（エラー隠蔽禁止）
-    - 指数バックオフによる再試行メカニズム（最大2回まで）
-    - API障害時の明確なエラーメッセージ表示（技術的詳細含む）
+    - 指数バックオフによる再試行メカニズム
+    - API障害時の明確なエラーメッセージ表示
     - _Requirements: 8.1, エラーハンドリング要件_
 
   - [x] 3.2 SERPER API統合（Next.js App Router API Routes）
     - app/api/serper/配下にAPIエンドポイント作成
     - SERPER APIクライアントの実装（lib/serper-client.ts）
-    - 1キーワードあたり10件までの検索結果取得
-    - 日本語・英語両方の検索対応
     - 検索結果の品質チェック機能
-    - 再試行メカニズム（最大2回まで）
-    - 検索失敗時の明確なエラー表示（技術的詳細含む）
+    - 代替検索手段への切り替え機能
+    - 検索失敗時の明確なエラー表示
     - _Requirements: 8.2, 5.1, エラーハンドリング要件_
 
   - [x] 3.3 統合エラーハンドリングシステム
     - ErrorHandlerクラスの実装（lib/error-handler.ts）
     - BaseAgentクラスの実装（エラー隠蔽禁止の原則）
     - カスタムエラークラス（ApiError, DataQualityError, TimeoutError）の実装
-    - ErrorDisplayコンポーネントの実装（app/components/ErrorDisplay.tsx）
-    - エラー分類と明示的な表示機能（技術的詳細含む）
+    - ErrorDisplayコンポーネントの実装（components/ErrorDisplay.tsx）
+    - エラー分類と明示的な表示機能
     - Supabaseへのエラーログ保存機能
     - デフォルト値・モックデータによるエラー隠蔽の禁止
-    - 再試行上限：2回
     - _Requirements: 8.3, エラーハンドリング要件_
 
-- [ ] 4. 情報収集エージェントの実装（Next.js App Router API Routes + Supabase）
+- [x] 4. 情報収集エージェントの実装（Next.js App Router API Routes + Supabase）
   - [x] 4.1 ユーザー入力処理機能
     - app/api/agents/information-collection/route.tsの作成
     - lib/agents/information-collection-agent.tsの実装
@@ -66,63 +62,44 @@
     - 結果のSupabaseへの保存とリアルタイム更新
     - _Requirements: 1.1, 1.2_
 
-  - [ ] 4.2 デフォルトカテゴリ収集機能
+  - [x] 4.2 デフォルトカテゴリ収集機能
     - 12カテゴリ（PropTech・スマートシティ・FinTech等）のトレンド収集
     - カテゴリ別情報収集の並列処理実装
     - 収集データの構造化とSupabaseへの保存
     - 進捗状況のリアルタイム更新
     - _Requirements: 1.3_
 
-  - [ ] 4.3 市場・技術情報収集機能
+  - [x] 4.3 市場・技術情報収集機能
     - SERPER APIを使用した市場規模調査機能
     - 技術トレンドの収集と分析機能
     - 規制環境の調査機能
     - research_dataテーブルへのデータ保存
     - _Requirements: 1.4, 5.1_
 
-  - [x] 4.4 ~~ケイパビリティ親和性評価機能~~
-    - ~~Supabaseから三菱地所ケイパビリティデータの取得~~
-    - ~~親和性スコア算出アルゴリズムの実装~~
-    - ~~具体的な活用シナリオ生成機能~~
-    - ~~評価結果のSupabaseへの保存~~
-    - _Note: Task 5.4に移動 - アイディエーションエージェントで実施_
+  - [x] 4.4 ケイパビリティ親和性評価機能
+    - Supabaseから三菱地所4大ケイパビリティデータの取得
+    - 親和性スコア算出アルゴリズムの実装
+    - 具体的な活用シナリオ生成機能
+    - 評価結果のSupabaseへの保存
+    - _Requirements: 1.5, 10.2_
 
-- [ ] 5. アイディエーションエージェントの実装（Next.js App Router API Routes + Supabase）
-  - [ ] 5.1 事業アイデア生成機能
+- [x] 5. アイディエーションエージェントの実装（Next.js App Router API Routes + Supabase）
+  - [x] 5.1 事業アイデア生成機能
     - app/api/agents/ideation/route.tsの作成
     - lib/agents/ideation-agent.tsの実装
-    - 収集情報に基づく複数事業アイデアの生成
-    - OpenAI APIを活用した創造的なアイデア生成
+    - 収集情報に基づく複数事業アイデアの生成（5個）
+    - OpenAI APIを活用した創造的なアイデア生成（制約なくアイディエーション）
     - business_ideasテーブルへのアイデア保存
     - _Requirements: 2.1_
+    - _Note: ケイパビリティとの親和性評価はCriticエージェントで実施_
 
-  - [ ] 5.2 既存アセット組み合わせ機能
-    - Supabaseからmitsubishi_assetsデータの取得
-    - 丸の内・みなとみらい等既存アセットとの組み合わせ提案
-    - アセット活用シナリオの生成
-    - 投資効率の概算機能
-    - _Requirements: 2.1, 10.1_
-
-  - [ ] 5.3 企業ネットワーク連携シナリオ作成
-    - Supabaseからnetwork_companiesデータの取得
-    - テナント企業群・三菱グループ・パートナーとの連携シナリオ
-    - ネットワーク効果の定量化
-    - 協業可能性の評価機能
-    - _Requirements: 2.2, 10.3_
-
-  - [ ] 5.4 ケイパビリティ活用シナリオ生成機能
-    - Supabaseから三菱地所ケイパビリティデータの取得
-    - 事業アイデアとケイパビリティの組み合わせシナリオ生成
-    - アクセラレーション効果の具体的な描写
-    - 活用シナリオのSupabaseへの保存
-    - _Requirements: 1.5, 2.1, 10.2_
-
-  - [ ] 5.5 収益性評価機能
-    - 営業利益10億円達成可能性の初期評価
-    - 5-10年での収益達成シナリオ作成
-    - 初期投資規模の概算機能
-    - 評価結果のSupabaseへの保存
-    - _Requirements: 2.3_
+  - [x] 5.2 ケイパビリティ活用シナリオ生成機能
+    - 三菱地所の6つのケイパビリティ定義（都市開発力・商業施設運営力・住宅事業力・国際事業力・イノベーション力・金融投資力）
+    - 各ビジネスアイデアに最適なケイパビリティの選択
+    - 「三菱地所の○○ケイパビリティを活かして、こうしてビジネスを加速できる」というシナリオ生成
+    - 具体的なアセットやネットワークを含む活用ストーリー
+    - _Requirements: 2.1, 10.1, 10.3_
+    - _Note: ケイパビリティ評価・スコアリングはCriticエージェントで実施_
 
 - [ ] 6. 評価エージェントの実装（Next.js App Router API Routes + Supabase）
   - [ ] 6.1 6軸評価システム
@@ -130,14 +107,12 @@
     - lib/agents/evaluation-agent.tsの実装
     - 独創性・実現可能性・市場性・シナジー適合性・競合優位性・リスクバランスの評価
     - OpenAI APIを活用した各軸の評価アルゴリズム実装
-    - **ケイパビリティ活用シナリオの妥当性評価機能**
     - evaluation_resultsテーブルへの評価結果保存
-    - _Requirements: 3.1, 1.5_
+    - _Requirements: 3.1_
 
   - [ ] 6.2 数値化・スコアリング機能
     - 営業利益10億円達成可能性の数値化
-    - **三菱地所ケイパビリティ活用度の定量化**
-    - **ケイパビリティとのシナジー効果の数値評価**
+    - 三菱地所ケイパビリティ活用度の定量化
     - 市場参入時期（3年以内）の評価
     - スコアリング結果のリアルタイム更新
     - _Requirements: 3.2_

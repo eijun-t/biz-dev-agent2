@@ -208,7 +208,8 @@ export async function POST(request: Request) {
 
 **責任:**
 - ユーザー入力の解析と調査計画策定
-- 市場・技術・トレンド情報の収集（12カテゴリ調査）
+- 市場・技術・トレンド情報の収集
+- 三菱地所ケイパビリティとの親和性評価
 - メモリコンテキストへのデータ保存
 
 **インターフェース:**
@@ -221,13 +222,18 @@ class InformationCollectionAgent {
       : await this.createDefaultResearchPlan(context);
     
     const marketData = await this.executeResearch(plan, context);
+    const affinityScores = await this.evaluateCapabilityAffinity(marketData, context);
     
-    return marketData;
+    return {
+      ...marketData,
+      capability_affinity: affinityScores
+    };
   }
   
   private async createCustomResearchPlan(userInput: string, context: SessionContext): Promise<ResearchPlan>
   private async createDefaultResearchPlan(context: SessionContext): Promise<ResearchPlan> // 全領域対応の12カテゴリ調査
   private async executeResearch(plan: ResearchPlan, context: SessionContext): Promise<MarketData>
+  private async evaluateCapabilityAffinity(data: MarketData, context: SessionContext): Promise<AffinityScore>
 }
 ```
 
@@ -236,41 +242,37 @@ class InformationCollectionAgent {
 2. 入力ありの場合：調査計画策定 → 関連情報収集
 3. 入力なしの場合：全領域対応の12カテゴリ調査
 4. 1000億円以上の市場規模を持つ事業機会の特定
-5. 結果をメモリコンテキストに保存（高速）
+5. 三菱地所ケイパビリティとの親和性評価
+6. 結果をメモリコンテキストに保存（高速）
 
 ### 4. アイディエーションエージェント (App Router API Routes)
 
 **責任:**
-- 収集情報に基づく事業アイデア生成
-- 既存アセットとの組み合わせ提案
-- 企業ネットワーク活用シナリオ作成
-- **三菱地所ケイパビリティとの組み合わせシナリオ生成**
+- 収集情報に基づく事業アイデア生成（制約なく自由にアイディエーション）
+- 三菱地所ケイパビリティを活用したビジネス加速シナリオの作成
+- 「こういうケイパビリティを活かしてこのビジネスを加速できる」というストーリー生成
 - メモリコンテキストからのデータ取得
+
+**注意事項:**
+- ケイパビリティとの親和性評価・スコアリングはCriticエージェントで実施
+- この段階では詳細な財務計算は不要
 
 **インターフェース:**
 ```typescript
 // lib/agents/ideation-agent.ts
 class IdeationAgent {
   async generate(marketData: MarketData, context: SessionContext): Promise<BusinessIdea[]> {
-    const mitsubishiAssets = await this.fetchMitsubishiAssets();
-    const networkData = await this.fetchNetworkData();
-    const capabilities = await this.fetchMitsubishiCapabilities();
+    // 制約なく自由にアイディエーション
+    const ideas = await this.generateBusinessIdeas(marketData, context);
     
-    const ideas = await this.generateBusinessIdeas(marketData, mitsubishiAssets, context);
-    const enhancedIdeas = await this.enhanceWithAssetCombinations(ideas, mitsubishiAssets, context);
-    const networkIdeas = await this.addNetworkScenarios(enhancedIdeas, networkData, context);
-    const finalIdeas = await this.generateCapabilityScenarios(networkIdeas, capabilities, context);
+    // ケイパビリティ活用シナリオの作成
+    const enhancedIdeas = await this.enhanceWithCapabilityScenarios(ideas, context);
     
-    return finalIdeas;
+    return enhancedIdeas;
   }
   
-  private async generateBusinessIdeas(marketData: MarketData, assets: MitsubishiAssets, context: SessionContext): Promise<BusinessIdea[]>
-  private async enhanceWithAssetCombinations(ideas: BusinessIdea[], assets: MitsubishiAssets, context: SessionContext): Promise<BusinessIdea[]>
-  private async addNetworkScenarios(ideas: BusinessIdea[], network: NetworkConnections, context: SessionContext): Promise<BusinessIdea[]>
-  private async generateCapabilityScenarios(ideas: BusinessIdea[], capabilities: Capability[], context: SessionContext): Promise<BusinessIdea[]>
-  private async fetchMitsubishiAssets(): Promise<MitsubishiAssets>
-  private async fetchNetworkData(): Promise<NetworkConnections>
-  private async fetchMitsubishiCapabilities(): Promise<Capability[]>
+  private async generateBusinessIdeas(marketData: MarketData, context: SessionContext): Promise<BusinessIdea[]>
+  private async enhanceWithCapabilityScenarios(ideas: BusinessIdea[], context: SessionContext): Promise<BusinessIdea[]>
 }
 ```
 
@@ -278,7 +280,7 @@ class IdeationAgent {
 
 **責任:**
 - 6軸評価（独創性・実現可能性・市場性・シナジー適合性・競合優位性・リスクバランス）
-- **ケイパビリティ活用シナリオの妥当性評価**
+- **三菱地所ケイパビリティとの親和性評価**（アイディエーションエージェントでは評価しない）
 - 営業利益10億円達成可能性の数値化
 - 1000億円以上の市場規模での事業性評価
 - 最優先アイデアの選定
@@ -290,22 +292,19 @@ class IdeationAgent {
 class EvaluationAgent {
   async evaluate(ideas: BusinessIdea[], context: SessionContext): Promise<EvaluationResult[]> {
     const evaluations = await this.evaluateSixDimensions(ideas, context);
-    const capabilityEvaluations = await this.evaluateCapabilityScenarios(ideas, context);
     const profitProjections = await this.calculateProfitPotentials(ideas, context);
-    const selectedIdea = await this.selectTopIdea(evaluations, capabilityEvaluations, context);
+    const selectedIdea = await this.selectTopIdea(evaluations, context);
     
     return evaluations.map(eval => ({
       ...eval,
-      capability_evaluation: capabilityEvaluations.find(c => c.idea_id === eval.idea_id),
       profit_projection: profitProjections.find(p => p.idea_id === eval.idea_id),
       is_selected: eval.idea_id === selectedIdea.id
     }));
   }
   
   private async evaluateSixDimensions(ideas: BusinessIdea[], context: SessionContext): Promise<EvaluationResult[]>
-  private async evaluateCapabilityScenarios(ideas: BusinessIdea[], context: SessionContext): Promise<CapabilityEvaluation[]>
   private async calculateProfitPotentials(ideas: BusinessIdea[], context: SessionContext): Promise<ProfitProjection[]>
-  private async selectTopIdea(evaluations: EvaluationResult[], capabilityEvals: CapabilityEvaluation[], context: SessionContext): Promise<BusinessIdea>
+  private async selectTopIdea(evaluations: EvaluationResult[], context: SessionContext): Promise<BusinessIdea>
 }
 ```
 
@@ -626,6 +625,12 @@ export interface MarketData {
   opportunities: MarketOpportunity[];
 }
 
+export interface BusinessIdeaWithCapability extends BusinessIdea {
+  capability_scenario?: string;
+  capability_categories?: string[];
+  network_partners?: string[];
+}
+
 export interface ResearchPlan {
   tam_sam_som_analysis: ResearchItem[];
   competitor_analysis: ResearchItem[];
@@ -822,54 +827,6 @@ export function useRealtime(sessionId: string) {
 }
 ```
 
-## API Integration Design
-
-### OpenAI API統合仕様
-
-**基本設定:**
-- モデル: GPT-4o-mini
-- 最大再試行回数: 2回
-- タイムアウト: 30秒/リクエスト
-
-**APIレスポンス形式:**
-```typescript
-interface ApiResponse<T = any> {
-  success: boolean;
-  data?: T;
-  error?: {
-    code: string;
-    message: string;
-    details?: any;
-    statusCode?: number;
-  };
-}
-```
-
-**エンドポイント:**
-- `POST /api/openai/generate` - テキスト生成
-- `POST /api/openai/analyze` - データ分析
-
-### SERPER API統合仕様
-
-**基本設定:**
-- 検索結果上限: 10件/キーワード
-- 対応言語: 日本語・英語
-- キャッシュ: なし
-- 最大再試行回数: 2回
-
-**検索パラメータ:**
-```typescript
-interface SerperSearchParams {
-  query: string;
-  num?: number; // デフォルト10
-  lang?: 'ja' | 'en' | 'all'; // デフォルト'all'
-  location?: string;
-}
-```
-
-**エンドポイント:**
-- `POST /api/serper/search` - Web検索
-
 ## Error Handling
 
 ### エラー分類と対応策
@@ -956,15 +913,15 @@ export function ErrorDisplay({ error, onRetry }: ErrorDisplayProps) {
   const getErrorMessage = (error: ErrorDisplayProps['error']) => {
     switch (error.type) {
       case 'api':
-        return `API接続エラー: ${error.details || 'APIサービスへの接続に失敗しました'}`;
+        return 'API接続エラーが発生しました。しばらく時間をおいて再試行してください。';
       case 'data_quality':
-        return `データ品質エラー: ${error.details || 'データの整合性に問題があります'}`;
+        return 'データ品質に問題があります。利用可能な部分的な結果のみ表示されます。';
       case 'timeout':
-        return `タイムアウトエラー: ${error.details || '処理時間が制限を超過しました'}`;
+        return '処理時間が制限を超過しました。完了した部分のみ表示されます。';
       case 'system':
-        return `システムエラー: ${error.details || '内部エラーが発生しました'}`;
+        return 'システムエラーが発生しました。管理者にお問い合わせください。';
       default:
-        return `エラー: ${error.message || '予期しないエラーが発生しました'}`;
+        return '予期しないエラーが発生しました。';
     }
   };
 

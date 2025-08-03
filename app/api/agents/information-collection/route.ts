@@ -3,12 +3,18 @@ import { NextRequest, NextResponse } from 'next/server'
 import { InformationCollectionAgent } from '@/lib/agents/information-collection-agent'
 import { ErrorHandler } from '@/lib/error-handler'
 import { createServerClient } from '@/lib/supabase-server'
+import { debugLogger } from '@/lib/debug-logger'
 
 export async function POST(request: NextRequest) {
+  const startTime = Date.now()
+  
   try {
     // リクエストボディの取得
     const body = await request.json()
     const { sessionId, userId, userInput } = body
+    
+    // デバッグ: リクエストログ
+    await debugLogger.logApiCall(sessionId || 'unknown', 'Research Agent', 'request', body)
 
     // 必須パラメータのチェック
     if (!sessionId) {
@@ -52,24 +58,34 @@ export async function POST(request: NextRequest) {
 
     // 結果の返却
     if (result.success) {
-      return NextResponse.json({
+      const response = {
         success: true,
         data: result.data
-      })
+      }
+      
+      // デバッグ: レスポンスログ
+      await debugLogger.logApiCall(sessionId, 'Research Agent', 'response', response, startTime)
+      
+      return NextResponse.json(response)
     } else {
-      return NextResponse.json(
-        {
-          error: true,
-          code: 'AGENT_EXECUTION_FAILED',
-          message: result.error,
-          details: result.errorDetails
-        },
-        { status: 500 }
-      )
+      const errorResponse = {
+        error: true,
+        code: 'AGENT_EXECUTION_FAILED',
+        message: result.error,
+        details: result.errorDetails
+      }
+      
+      // デバッグ: エラーログ
+      await debugLogger.logError(sessionId, 'Research Agent', result.error, result.errorDetails)
+      
+      return NextResponse.json(errorResponse, { status: 500 })
     }
   } catch (error) {
     // エラーハンドリング
     const errorResponse = ErrorHandler.formatErrorResponse(error as Error)
+    
+    // デバッグ: エラーログ
+    await debugLogger.logError(sessionId || 'unknown', 'Research Agent', error)
     
     return NextResponse.json(
       errorResponse,

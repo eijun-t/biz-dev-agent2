@@ -1,7 +1,7 @@
 // 情報収集エージェント v3 - ケイパビリティ評価を削除、既存データ再利用機能付き
 import { BaseAgent, AgentContext } from './base-agent'
-import { callOpenAI, callOpenAIForJSON } from '@/lib/openai-client'
-import { searchWithSerper, searchMultipleQueries, evaluateSearchQuality, extractMarketSize } from '@/lib/serper-client'
+import { callOpenAI, callOpenAIForJSON } from '@/lib/openai-functions'
+import { searchMultipleQueries, evaluateSearchQuality, extractMarketSize } from '@/lib/serper-client'
 import { TREND_CATEGORIES, TrendCategory } from '@/lib/constants/categories'
 import { Database } from '@/types/database'
 
