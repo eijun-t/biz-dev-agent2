@@ -53,8 +53,8 @@
     - デフォルト値・モックデータによるエラー隠蔽の禁止
     - _Requirements: 8.3, エラーハンドリング要件_
 
-- [ ] 4. 情報収集エージェントの実装（Next.js App Router API Routes + Supabase）
-  - [ ] 4.1 ユーザー入力処理機能
+- [x] 4. 情報収集エージェントの実装（Next.js App Router API Routes + Supabase）
+  - [x] 4.1 ユーザー入力処理機能
     - app/api/agents/information-collection/route.tsの作成
     - lib/agents/information-collection-agent.tsの実装
     - ユーザー入力の解析と調査計画策定機能
@@ -62,21 +62,21 @@
     - 結果のSupabaseへの保存とリアルタイム更新
     - _Requirements: 1.1, 1.2_
 
-  - [ ] 4.2 デフォルトカテゴリ収集機能
+  - [x] 4.2 デフォルトカテゴリ収集機能
     - 12カテゴリ（PropTech・スマートシティ・FinTech等）のトレンド収集
     - カテゴリ別情報収集の並列処理実装
     - 収集データの構造化とSupabaseへの保存
     - 進捗状況のリアルタイム更新
     - _Requirements: 1.3_
 
-  - [ ] 4.3 市場・技術情報収集機能
+  - [x] 4.3 市場・技術情報収集機能
     - SERPER APIを使用した市場規模調査機能
     - 技術トレンドの収集と分析機能
     - 規制環境の調査機能
     - research_dataテーブルへのデータ保存
     - _Requirements: 1.4, 5.1_
 
-  - [ ] 4.4 ケイパビリティ親和性評価機能
+  - [x] 4.4 ケイパビリティ親和性評価機能
     - Supabaseから三菱地所4大ケイパビリティデータの取得
     - 親和性スコア算出アルゴリズムの実装
     - 具体的な活用シナリオ生成機能
